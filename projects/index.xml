@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolio on Czarina Luna</title>
+    <link>//czarinaluna.com/projects/</link>
+    <description>Recent content in Portfolio on Czarina Luna</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="//czarinaluna.com/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Regression Analysis for Estimating Prices</title>
+      <link>//czarinaluna.com/projects/project-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//czarinaluna.com/projects/project-1/</guid>
+      <description>Overview An analysis and regression modeling of over 21,000 real estate transactions in King County, Washington is completed to improve home valuation and real estate advisory.
+The findings include top features that are important to the bestimate model, which are square footage of living space, distance to Seattle, total distance to both Seattle and Redmond, distance to Redmond, and square footage of living space of the nearest 15 neighbors.</description>
+    </item>
+    
+    <item>
+      <title>⭐ Machine Learning-Powered Video Library</title>
+      <link>//czarinaluna.com/projects/project-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//czarinaluna.com/projects/project-2/</guid>
+      <description>Overview Video sharing applications today lack the functionality for users to search videos by their content. As a solution I developed a searchable video library that processes videos and returns exact matches to queries using machine learning and artificial intelligence including speech recognition, optical character recognition, and object detection.
+Read more
+ Github: Repository</description>
+    </item>
+    
+    <item>
+      <title>H1N1 Vaccination Status Classification</title>
+      <link>//czarinaluna.com/projects/project-3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//czarinaluna.com/projects/project-3/</guid>
+      <description>Overview An analysis and classification modeling of over 25,000 survey responses is completed to guide public health efforts on vaccination outreach.
+The highest accuracy and precision of 86% and 75% respectively is attained by the Extra Trees model predicting H1N1 vaccination status.
+According to the permutation importances of the model, the top features that affect H1N1 vaccination status are seasonal flu vaccination status, direct recommendation from a doctor, and health insurance.</description>
+    </item>
+    
+    <item>
+      <title>SXSW Conference Sentiment Analysis</title>
+      <link>//czarinaluna.com/projects/project-4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//czarinaluna.com/projects/project-4/</guid>
+      <description>Overview An analysis and natural language processing of thousands of tweets is completed to predict sentiments during SXSW and provide insights to brands and products at the conference.
+Though the extra trees classifier has the highest test accuracy, the Multinomial Naive Bayes model performs the best at classifying negative and positive sentiments.
+Clustering analysis is performed to identify themes and topics that emerged, and recommendations are made accordingly.
+Read more</description>
+    </item>
+    
+    <item>
+      <title>Retail Product Recommender Engine</title>
+      <link>//czarinaluna.com/projects/project-5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//czarinaluna.com/projects/project-5/</guid>
+      <description>Overview A recommender engine is developed using 200,000 reviews at Rent the Runway to expose users to relevant products that tailor to their preferences.
+Content-based recommenders and collaborative filtering systems are implemented, including K-Nearest Neighbors and Matrix Factorization algorithms.
+The recommendations are generated according to predicted user ratings. Upon evaluation of the models, the Singular Value Decomposition resulted to the lowest mean absolute error of 0.5 on the five point rating scale.</description>
+    </item>
+    
+  </channel>
+</rss>
