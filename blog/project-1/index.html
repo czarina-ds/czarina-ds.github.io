@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<title>
+Regression Analysis for Estimating Prices - Czarina Luna
+</title>
+
+
+
+        
+        <meta property="og:title" content="Regression Analysis for Estimating Prices - Czarina Luna" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content=""/>
+<meta property="og:url" content="//czarinaluna.com/blog/project-1/"/>
+<meta property="og:site_name" content="Czarina Luna"/>
+
+
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-1/choropleth.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-1/fig10.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-1/fig2.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-1/fig3.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-1/fig4.png"/>
+
+
+
+        
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.267a336653a0bbe8778db2ec1104a18aef649cadc8f11b3c527b17612201117b.css" integrity="sha256-JnozZlOgu&#43;h3jbLsEQShiu9knK3I8Rs8UnsXYSIBEXs=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero  fade-in one ">
+                
+
+<h1 class="bold-title is-1">Project</h1>
+
+
+            </div>
+            
+            <div class="section  fade-in two ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/">main</a>
+            
+
+            
+            
+
+            
+                
+            
+
+            
+                
+            
+
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#about">Intro</a>
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="//czarinaluna.com/projects/">
+                  
+                  
+                  Portfolio
+                  
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="//czarinaluna.com/blog/">
+                  
+                  Back to Project
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#interest">Interest</a>
+            
+            
+            
+            
+
+            
+            
+            <a class="navbar-item" href="/#contact">Contact</a>
+            
+            
+
+            
+
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="//czarinaluna.com/blog/project-1/">Regression Analysis for Estimating Prices</a>
+    </h2>
+    
+    <h4 class="title is-4">
+        
+        By&nbsp;Czarina Luna</h4>
+    
+    <div class="post-data">
+        01 2022
+        
+         | 
+        6 minutes read
+        
+    </div>
+    
+    <div class="blog-share">
+        Share this:
+        
+        <a class="twitter-share-button"
+            href="https://twitter.com/intent/tweet?text=Regression%20Analysis%20for%20Estimating%20Prices%20%2f%2fczarinaluna.com%2fblog%2fproject-1%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fab fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</div>
+
+<div class="container markdown top-pad">
+    <p><img src="gokhan-kara-rkiL2esY7yM-unsplash.jpg" alt="header"></p>
+
+<h3 id="i-overview" class="anchor-link"><a href="#i-overview">I. Overview</a></h3>
+<p>An analysis and regression modeling of over 21,000 real estate transactions in King County, Washington is completed to improve home valuation and real estate advisory. The findings include top features that are important to the <em>bestimate</em> model, which are square footage of living space, distance to Seattle, total distance to both Seattle and Redmond, distance to Redmond, and square footage of living space of the nearest 15 neighbors. The <em>bestimate model</em> that is the tuned random forest performs best in predicting house prices based on over 20 features. It explains 88% of the variance in the data and its predictions are USD 107,000 off from the actual prices on average.</p>
+
+<h3 id="ii-business-problem" class="anchor-link"><a href="#ii-business-problem">II. Business Problem</a></h3>
+<p>Real estate agencies in King County, Washington may be able to improve their advisory services by identifying important features that factor in home valuation based on relevant data. Doing so will allow real estate agents to provide more accurate prices to clients as supported by historical records. Using publicly available data, I describe patterns in real estate transactions such as features that likely drive prices.</p>
+
+<h3 id="iii-data-understanding" class="anchor-link"><a href="#iii-data-understanding">III. Data Understanding</a></h3>
+<p>The <a href="https://www.kaggle.com/datasets/harlfoxem/housesalesprediction">King County data</a> spans a year between 2014 and 2015 with over 21,000 real estate transactions and 21 features, of which the dependent variable to predict is <code>price</code>. A full description of all column features is provided along with other data files, available in the repository&rsquo;s <a href="https://github.com/czarinagluna/regression-analysis-for-estimating-prices/tree/main/Data">data folder</a>.</p>
+<details><summary>To prepare the data for analysis, the following pre-processing steps are taken:</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#586e75"># Convert date to date time format and create month feature</span>
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;date&#39;</span>] <span style="color:#719e07">=</span> pd<span style="color:#719e07">.</span>to_datetime(data[<span style="color:#2aa198">&#39;date&#39;</span>])
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;month&#39;</span>] <span style="color:#719e07">=</span> pd<span style="color:#719e07">.</span>DatetimeIndex(data[<span style="color:#2aa198">&#39;date&#39;</span>])<span style="color:#719e07">.</span>month
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Correct likely typographical error </span>
+</span></span><span style="display:flex;"><span>data<span style="color:#719e07">.</span>loc[(data<span style="color:#719e07">.</span>bedrooms <span style="color:#719e07">==</span> <span style="color:#2aa198">33</span>), <span style="color:#2aa198">&#39;bedrooms&#39;</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">3</span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Replace missing values and change to numerical scale for consistency</span>
+</span></span><span style="display:flex;"><span>data<span style="color:#719e07">.</span>loc[data[<span style="color:#2aa198">&#39;waterfront&#39;</span>]<span style="color:#719e07">.</span>isnull(), <span style="color:#2aa198">&#39;waterfront&#39;</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;NO&#39;</span>
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;waterfront&#39;</span>] <span style="color:#719e07">=</span> data[<span style="color:#2aa198">&#39;waterfront&#39;</span>]<span style="color:#719e07">.</span>apply(<span style="color:#719e07">lambda</span> x: <span style="color:#2aa198">0</span> <span style="color:#719e07">if</span> x <span style="color:#719e07">==</span> <span style="color:#2aa198">&#39;NO&#39;</span> <span style="color:#719e07">else</span> <span style="color:#2aa198">1</span>) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>data<span style="color:#719e07">.</span>loc[data<span style="color:#719e07">.</span>view<span style="color:#719e07">.</span>isnull(), <span style="color:#2aa198">&#39;view&#39;</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;NONE&#39;</span>
+</span></span><span style="display:flex;"><span>dict_view <span style="color:#719e07">=</span> {<span style="color:#2aa198">&#39;NONE&#39;</span>:<span style="color:#2aa198">0</span>, <span style="color:#2aa198">&#39;FAIR&#39;</span>:<span style="color:#2aa198">1</span>, <span style="color:#2aa198">&#39;AVERAGE&#39;</span>:<span style="color:#2aa198">2</span>, GOOD<span style="color:#2aa198">&#39;:3,&#39;</span>EXCELLENT<span style="color:#2aa198">&#39;:4}</span>
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;view&#39;</span>] <span style="color:#719e07">=</span> data[<span style="color:#2aa198">&#39;view&#39;</span>]<span style="color:#719e07">.</span>replace(dict_view) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dict_condition <span style="color:#719e07">=</span> {<span style="color:#2aa198">&#39;Poor&#39;</span>:<span style="color:#2aa198">0</span>, <span style="color:#2aa198">&#39;Fair&#39;</span>:<span style="color:#2aa198">1</span>, <span style="color:#2aa198">&#39;Average&#39;</span>:<span style="color:#2aa198">2</span>, <span style="color:#2aa198">&#39;Good&#39;</span>:<span style="color:#2aa198">3</span>, <span style="color:#2aa198">&#39;Very Good&#39;</span>:<span style="color:#2aa198">4</span>}
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;condition&#39;</span>] <span style="color:#719e07">=</span> data[<span style="color:#2aa198">&#39;condition&#39;</span>]<span style="color:#719e07">.</span>replace(dict_condition)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Only keep the number from string</span>
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;grade&#39;</span>] <span style="color:#719e07">=</span> data[<span style="color:#2aa198">&#39;grade&#39;</span>]<span style="color:#719e07">.</span>map(<span style="color:#719e07">lambda</span> x: <span style="color:#b58900">int</span>(x<span style="color:#719e07">.</span>split(<span style="color:#2aa198">&#39; &#39;</span>)[<span style="color:#2aa198">0</span>])) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Replace missing values and create new features</span>
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;sqft_basement&#39;</span>] <span style="color:#719e07">=</span> data[<span style="color:#2aa198">&#39;sqft_basement&#39;</span>]<span style="color:#719e07">.</span>replace(<span style="color:#2aa198">&#39;?&#39;</span>, <span style="color:#2aa198">&#39;0&#39;</span>)<span style="color:#719e07">.</span>astype(<span style="color:#2aa198">&#39;float&#39;</span>)
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;basement&#39;</span>] <span style="color:#719e07">=</span> data[<span style="color:#2aa198">&#39;sqft_basement&#39;</span>]<span style="color:#719e07">.</span>apply(<span style="color:#719e07">lambda</span> x: <span style="color:#2aa198">0</span> <span style="color:#719e07">if</span> x <span style="color:#719e07">==</span> <span style="color:#2aa198">0</span> <span style="color:#719e07">else</span> <span style="color:#2aa198">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>data<span style="color:#719e07">.</span>loc[data[<span style="color:#2aa198">&#39;yr_renovated&#39;</span>]<span style="color:#719e07">.</span>isnull(), <span style="color:#2aa198">&#39;yr_renovated&#39;</span>] <span style="color:#719e07">=</span> <span style="color:#2aa198">0</span>
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;renovated&#39;</span>] <span style="color:#719e07">=</span> data[<span style="color:#2aa198">&#39;yr_renovated&#39;</span>]<span style="color:#719e07">.</span>apply(<span style="color:#719e07">lambda</span> x: <span style="color:#2aa198">0</span> <span style="color:#719e07">if</span> x <span style="color:#719e07">==</span> <span style="color:#2aa198">0</span> <span style="color:#719e07">else</span> <span style="color:#2aa198">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;age&#39;</span>] <span style="color:#719e07">=</span> data[<span style="color:#2aa198">&#39;date&#39;</span>]<span style="color:#719e07">.</span>dt<span style="color:#719e07">.</span>year <span style="color:#719e07">-</span> data[<span style="color:#2aa198">&#39;yr_built&#39;</span>]
+</span></span></code></pre></div></details>
+<p><strong>Exploratory Data Analysis</strong></p>
+<details><summary>Month-over-month comparison</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>date_data <span style="color:#719e07">=</span> data[[<span style="color:#2aa198">&#39;date&#39;</span>, <span style="color:#2aa198">&#39;price&#39;</span>]]
+</span></span><span style="display:flex;"><span>date_data <span style="color:#719e07">=</span> data<span style="color:#719e07">.</span>set_index(<span style="color:#2aa198">&#39;date&#39;</span>, drop<span style="color:#719e07">=</span><span style="color:#cb4b16">True</span>)<span style="color:#719e07">.</span>astype(<span style="color:#2aa198">&#39;float64&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Resample data to count transactions per month</span>
+</span></span><span style="display:flex;"><span>monthly_count <span style="color:#719e07">=</span> date_data<span style="color:#719e07">.</span>resample(<span style="color:#2aa198">&#39;MS&#39;</span>)<span style="color:#719e07">.</span>count()
+</span></span><span style="display:flex;"><span>monthly_count <span style="color:#719e07">=</span> monthly_count<span style="color:#719e07">.</span>drop(monthly_count<span style="color:#719e07">.</span>index[<span style="color:#719e07">-</span><span style="color:#2aa198">1</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Resample data to calculate mean price per month</span>
+</span></span><span style="display:flex;"><span>monthly_avg <span style="color:#719e07">=</span> date_data<span style="color:#719e07">.</span>resample(<span style="color:#2aa198">&#39;MS&#39;</span>)<span style="color:#719e07">.</span>mean()
+</span></span><span style="display:flex;"><span>monthly_avg <span style="color:#719e07">=</span> monthly_avg<span style="color:#719e07">.</span>drop(monthly_avg<span style="color:#719e07">.</span>index[<span style="color:#719e07">-</span><span style="color:#2aa198">1</span>])
+</span></span></code></pre></div></details>
+<p><img src="fig2.png" alt="dataviz"></p>
+<p>The highest peaks in the number of houses sold per month happened in the seasons of spring and summer. The decline in the months that followed dropped to the lowest point at the first month of the new year. As for the price of houses sold per month, the values followed roughly the same pattern.</p>
+<p><img src="fig3.png" alt="dataviz"></p>
+<p>Price is strongly correlated with <code>sqft_living</code>, <code>grade</code>, <code>sqft_living15</code>, <code>bathrooms</code>, and <code>bathrooms</code>.</p>
+<p>Let&rsquo;s visualize their relationships and distributions.</p>
+<p><img src="fig4.png" alt="dataviz"></p>
+<p><strong>Geospatial Mapping</strong></p>
+<blockquote>
+<p>&ldquo;<em>Location, location, location</em>&rdquo;</p>
+</blockquote>
+<p><strong>Location is important in real estate and in analysis!</strong></p>
+<details><summary>Let's map the data points:</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#586e75"># Create function to map data using geopandas</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">map_data</span>(data_, title, name, colormap):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;Plots the data points using latitude and longitude on top of King County map&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    plt<span style="color:#719e07">.</span>style<span style="color:#719e07">.</span>use(<span style="color:#2aa198">&#39;seaborn&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    fig, ax <span style="color:#719e07">=</span> plt<span style="color:#719e07">.</span>subplots(figsize<span style="color:#719e07">=</span>(<span style="color:#2aa198">8</span>,<span style="color:#2aa198">8</span>))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    king_county_fig <span style="color:#719e07">=</span> gpd<span style="color:#719e07">.</span>read_file(<span style="color:#2aa198">&#39;data/map/Incorporated_Areas_of_King_County___city_area.shp&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    geometry <span style="color:#719e07">=</span> [Point(xy) <span style="color:#719e07">for</span> xy <span style="color:#719e07">in</span> <span style="color:#b58900">zip</span>(data_[<span style="color:#2aa198">&#39;long&#39;</span>], data_[<span style="color:#2aa198">&#39;lat&#39;</span>])]
+</span></span><span style="display:flex;"><span>    geo_data <span style="color:#719e07">=</span> gpd<span style="color:#719e07">.</span>GeoDataFrame(data_, crs<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;EPSG:4326&#39;</span>, geometry<span style="color:#719e07">=</span>geometry)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    king_county_fig<span style="color:#719e07">.</span>plot(ax<span style="color:#719e07">=</span>ax, alpha<span style="color:#719e07">=</span><span style="color:#2aa198">0.4</span>, color<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;grey&#39;</span>)
+</span></span><span style="display:flex;"><span>    geo_data<span style="color:#719e07">.</span>plot(column<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;price&#39;</span>, ax<span style="color:#719e07">=</span>ax, alpha<span style="color:#719e07">=</span><span style="color:#2aa198">0.4</span>, legend<span style="color:#719e07">=</span><span style="color:#cb4b16">True</span>, markersize<span style="color:#719e07">=</span><span style="color:#2aa198">8</span>, cmap<span style="color:#719e07">=</span>plt<span style="color:#719e07">.</span>get_cmap(colormap), 
+</span></span><span style="display:flex;"><span>                  legend_kwds<span style="color:#719e07">=</span>{<span style="color:#2aa198">&#39;shrink&#39;</span>: <span style="color:#2aa198">0.7</span>, <span style="color:#2aa198">&#39;format&#39;</span>: <span style="color:#2aa198">&#39;</span><span style="color:#2aa198">%.0f</span><span style="color:#2aa198">&#39;</span>})
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    plt<span style="color:#719e07">.</span>xlim(data[<span style="color:#2aa198">&#39;long&#39;</span>]<span style="color:#719e07">.</span>min(), data[<span style="color:#2aa198">&#39;long&#39;</span>]<span style="color:#719e07">.</span>max())
+</span></span><span style="display:flex;"><span>    plt<span style="color:#719e07">.</span>ylim(data[<span style="color:#2aa198">&#39;lat&#39;</span>]<span style="color:#719e07">.</span>min(), data[<span style="color:#2aa198">&#39;lat&#39;</span>]<span style="color:#719e07">.</span>max())
+</span></span><span style="display:flex;"><span>    plt<span style="color:#719e07">.</span>ticklabel_format(style<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;plain&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    plt<span style="color:#719e07">.</span>title(title, fontsize<span style="color:#719e07">=</span><span style="color:#2aa198">14</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    plt<span style="color:#719e07">.</span>savefig(<span style="color:#2aa198">f</span><span style="color:#2aa198">&#39;data/images/</span><span style="color:#2aa198">{</span>name<span style="color:#2aa198">}</span><span style="color:#2aa198">.png&#39;</span>, dpi<span style="color:#719e07">=</span><span style="color:#2aa198">200</span>, transparent<span style="color:#719e07">=</span><span style="color:#cb4b16">True</span>)
+</span></span><span style="display:flex;"><span>    plt<span style="color:#719e07">.</span>show()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>map_data(UnderMillion, <span style="color:#2aa198">&#39;House Prices Sold Under $1 Million&#39;</span>, <span style="color:#2aa198">&#39;fig5&#39;</span>, <span style="color:#2aa198">&#39;PuBuGn&#39;</span>)
+</span></span></code></pre></div></details>
+<p><img src="fig5.png" alt="dataviz"></p>
+<p>The concentrated geographic patterns reveal parts of the county populated by the more expensive houses represented by darker colors like the island at the center. The even more expensive houses sold for over a million dollars are located at about the same spots as the dark dots.</p>
+<p>Locate the highest priced houses in the data in the following map.</p>
+<p><img src="fig6.png" alt="dataviz"></p>
+<p><strong>Interactive Maps</strong></p>
+<p>I created choropleth maps (<a href="https://github.com/czarinagluna/regression-analysis-for-estimating-prices/blob/main/map.ipynb">code</a>) to further understand how house prices vary by location.</p>
+<p>To interact with the maps please use this <a href="https://nbviewer.org/github/czarinagluna/regression-analysis-for-estimating-prices/blob/main/map.ipynb">notebook viewer</a>.</p>
+<p><img src="choropleth.png" alt="dataviz"></p>
+<details><summary>Feature Engineering</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#586e75"># Import data from population census</span>
+</span></span><span style="display:flex;"><span>population <span style="color:#719e07">=</span> pd<span style="color:#719e07">.</span>read_csv(<span style="color:#2aa198">&#39;data/population.csv&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>population_density <span style="color:#719e07">=</span> population<span style="color:#719e07">.</span>loc[:, [<span style="color:#2aa198">&#39;City Name&#39;</span>, <span style="color:#2aa198">&#39;Total Population 2010&#39;</span>, <span style="color:#2aa198">&#39;Population Density (Persons / Square Mile) 2010&#39;</span>]]
+</span></span><span style="display:flex;"><span>population_density <span style="color:#719e07">=</span> population_density<span style="color:#719e07">.</span>rename(columns<span style="color:#719e07">=</span>{<span style="color:#2aa198">&#39;City Name&#39;</span>:<span style="color:#2aa198">&#39;city&#39;</span>, <span style="color:#2aa198">&#39;Total Population 2010&#39;</span>:<span style="color:#2aa198">&#39;population&#39;</span>, <span style="color:#2aa198">&#39;Population Density (Persons / Square Mile) 2010&#39;</span>:<span style="color:#2aa198">&#39;pop_density&#39;</span>})
+</span></span><span style="display:flex;"><span><span style="color:#719e07">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Map population data to cities</span>
+</span></span><span style="display:flex;"><span>king_county_zipcode <span style="color:#719e07">=</span> pd<span style="color:#719e07">.</span>merge(king_county_population, zipcodes, on<span style="color:#719e07">=</span>[<span style="color:#2aa198">&#39;city&#39;</span>])
+</span></span><span style="display:flex;"><span>engineered_data <span style="color:#719e07">=</span> pd<span style="color:#719e07">.</span>merge(data, king_county_zipcode, how<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;inner&#39;</span>, on<span style="color:#719e07">=</span>[<span style="color:#2aa198">&#39;zipcode&#39;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Create function to calculate distance from cities</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">find_distance</span>(center, lat, long):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;Uses haversine function to find distance between a given center and a point&#39;s latitude and longitude&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    house <span style="color:#719e07">=</span> (lat, long)
+</span></span><span style="display:flex;"><span>    distance <span style="color:#719e07">=</span> haversine(center, house, unit<span style="color:#719e07">=</span>Unit<span style="color:#719e07">.</span>MILES)
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> distance
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">add_distance</span>(data):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;Applies the find_distance function to dataframe to add columns for distances to Seattle and Redmond&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    seattle <span style="color:#719e07">=</span> (<span style="color:#2aa198">47.608013</span>, <span style="color:#719e07">-</span><span style="color:#2aa198">122.335167</span>)
+</span></span><span style="display:flex;"><span>    redmond <span style="color:#719e07">=</span> (<span style="color:#2aa198">47.673988</span>, <span style="color:#719e07">-</span><span style="color:#2aa198">122.121513</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    data[<span style="color:#2aa198">&#39;to_seattle&#39;</span>] <span style="color:#719e07">=</span> data<span style="color:#719e07">.</span>apply(<span style="color:#719e07">lambda</span> x: find_distance(seattle, x[<span style="color:#2aa198">&#39;lat&#39;</span>], x[<span style="color:#2aa198">&#39;long&#39;</span>]), axis<span style="color:#719e07">=</span><span style="color:#2aa198">1</span>)
+</span></span><span style="display:flex;"><span>    data[<span style="color:#2aa198">&#39;to_redmond&#39;</span>] <span style="color:#719e07">=</span> data<span style="color:#719e07">.</span>apply(<span style="color:#719e07">lambda</span> x: find_distance(redmond, x[<span style="color:#2aa198">&#39;lat&#39;</span>], x[<span style="color:#2aa198">&#39;long&#39;</span>]), axis<span style="color:#719e07">=</span><span style="color:#2aa198">1</span>)
+</span></span><span style="display:flex;"><span>    data[<span style="color:#2aa198">&#39;distance&#39;</span>] <span style="color:#719e07">=</span> data[<span style="color:#2aa198">&#39;to_seattle&#39;</span>] <span style="color:#719e07">+</span> data[<span style="color:#2aa198">&#39;to_redmond&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    data <span style="color:#719e07">=</span> data<span style="color:#719e07">.</span>drop(columns<span style="color:#719e07">=</span>[<span style="color:#2aa198">&#39;lat&#39;</span>, <span style="color:#2aa198">&#39;long&#39;</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> data
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>engineered_data <span style="color:#719e07">=</span> add_distance(engineered_data)
+</span></span></code></pre></div></details>
+
+<h3 id="iv-data-modeling" class="anchor-link"><a href="#iv-data-modeling">IV. Data Modeling</a></h3>
+<p>The dependent variable <code>price</code> is continuous and so I iterate over regression models: from simple to multiple linear regression, ridge and lasso regression, decision trees and finally, random forests.</p>
+<details><summary>Machine Learning Pipeline</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#586e75"># Standardize numerical features</span>
+</span></span><span style="display:flex;"><span>num_pipe <span style="color:#719e07">=</span> Pipeline(steps<span style="color:#719e07">=</span>[
+</span></span><span style="display:flex;"><span>    (<span style="color:#2aa198">&#39;num_imputer&#39;</span>, SimpleImputer(strategy<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;median&#39;</span>)),
+</span></span><span style="display:flex;"><span>    (<span style="color:#2aa198">&#39;scaler&#39;</span>, StandardScaler())
+</span></span><span style="display:flex;"><span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Perform one hot encoding on categorical features</span>
+</span></span><span style="display:flex;"><span>cat_pipe <span style="color:#719e07">=</span> Pipeline(steps<span style="color:#719e07">=</span>[
+</span></span><span style="display:flex;"><span>    (<span style="color:#2aa198">&#39;cat_imputer&#39;</span>, SimpleImputer(strategy<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;most_frequent&#39;</span>)),
+</span></span><span style="display:flex;"><span>    (<span style="color:#2aa198">&#39;ohe&#39;</span>, OneHotEncoder(handle_unknown<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;ignore&#39;</span>))
+</span></span><span style="display:flex;"><span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>num_features <span style="color:#719e07">=</span> [<span style="color:#2aa198">&#39;bedrooms&#39;</span>, <span style="color:#2aa198">&#39;bathrooms&#39;</span>, <span style="color:#2aa198">&#39;sqft_living&#39;</span>, <span style="color:#2aa198">&#39;sqft_lot&#39;</span>, <span style="color:#2aa198">&#39;floors&#39;</span>, <span style="color:#2aa198">&#39;sqft_living15&#39;</span>, <span style="color:#2aa198">&#39;sqft_lot15&#39;</span>, 
+</span></span><span style="display:flex;"><span>                <span style="color:#2aa198">&#39;age&#39;</span>, <span style="color:#2aa198">&#39;population&#39;</span>, <span style="color:#2aa198">&#39;pop_density&#39;</span>, <span style="color:#2aa198">&#39;to_seattle&#39;</span>, <span style="color:#2aa198">&#39;to_redmond&#39;</span>, <span style="color:#2aa198">&#39;distance&#39;</span>]
+</span></span><span style="display:flex;"><span>cat_features <span style="color:#719e07">=</span> [<span style="color:#2aa198">&#39;waterfront&#39;</span>, <span style="color:#2aa198">&#39;view&#39;</span>, <span style="color:#2aa198">&#39;condition&#39;</span>, <span style="color:#2aa198">&#39;grade&#39;</span>, <span style="color:#2aa198">&#39;zipcode&#39;</span>, <span style="color:#2aa198">&#39;month&#39;</span>, <span style="color:#2aa198">&#39;basement&#39;</span>, <span style="color:#2aa198">&#39;renovated&#39;</span>, <span style="color:#2aa198">&#39;city&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>col_transformer <span style="color:#719e07">=</span> ColumnTransformer([
+</span></span><span style="display:flex;"><span>    (<span style="color:#2aa198">&#39;num_transformer&#39;</span>, num_pipe, num_features),
+</span></span><span style="display:flex;"><span>    (<span style="color:#2aa198">&#39;cat_transformer&#39;</span>, cat_pipe, cat_features)
+</span></span><span style="display:flex;"><span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Multiple linear regression using all features</span>
+</span></span><span style="display:flex;"><span>lr_pipe <span style="color:#719e07">=</span> Pipeline(steps<span style="color:#719e07">=</span>[
+</span></span><span style="display:flex;"><span>    (<span style="color:#2aa198">&#39;col_transformer&#39;</span>, col_transformer),
+</span></span><span style="display:flex;"><span>    (<span style="color:#2aa198">&#39;lr&#39;</span>, LinearRegression())
+</span></span><span style="display:flex;"><span>])
+</span></span></code></pre></div></details>
+<p>I perform grid search (<a href="https://github.com/czarinagluna/regression-analysis-for-estimating-prices/blob/main/gridsearch.ipynb">code</a>) to find the optimal parameters of decision trees and random forests.</p>
+<details><summary>Hyperparameter Tuning</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#586e75"># Create function to run grid search cv</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">grid_search</span>(regressor, params):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;Performs grid search on given regression model, returns best cross validation scores and parameters&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    gridsearch <span style="color:#719e07">=</span> GridSearchCV(estimator<span style="color:#719e07">=</span>regressor, param_grid<span style="color:#719e07">=</span>params, cv<span style="color:#719e07">=</span><span style="color:#2aa198">5</span>)
+</span></span><span style="display:flex;"><span>    gridsearch<span style="color:#719e07">.</span>fit(X_train, y_train)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">print</span>(<span style="color:#2aa198">f</span><span style="color:#2aa198">&#39;Best cv score: </span><span style="color:#2aa198">{</span>gridsearch<span style="color:#719e07">.</span>best_score_ <span style="color:#2aa198">:</span><span style="color:#2aa198">.2%</span><span style="color:#2aa198">}</span><span style="color:#2aa198">&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">print</span>(<span style="color:#2aa198">f</span><span style="color:#2aa198">&#39;Best parameters: </span><span style="color:#2aa198">{</span>gridsearch<span style="color:#719e07">.</span>best_params_<span style="color:#2aa198">}</span><span style="color:#2aa198">&#39;</span>)
+</span></span></code></pre></div></details>
+<p><strong>Model Performance</strong></p>
+<p><img src="models.png" alt="dataviz"></p>
+
+<h3 id="v-results" class="anchor-link"><a href="#v-results">V. Results</a></h3>
+<p><strong>Baseline to <em>Bestimate</em> Model</strong></p>
+<p>The baseline model <code>simple_lr</code> significantly improved to the <code>poly_tuned_rf</code>, our <em>bestimate</em> model:</p>
+<ul>
+<li>from an R-squared of 0.47 to 0.88, and</li>
+<li>from a Root Mean Squared Error of USD 217,000 to USD  107,000</li>
+</ul>
+<p>To visualize the significant difference, let&rsquo;s plot how far away the predictions of the baseline model are to the actual prices versus how much closer the predictions of the bestimate model are:</p>
+<p><img src="fig9.png" alt="dataviz"></p>
+<p><strong>Permutation Feature Importances</strong></p>
+<p>For advisory, the top five features with the highest mean feature importances to the model are:</p>
+<ol>
+<li>Square footage of living space</li>
+<li>Distance to Seattle</li>
+<li>Total distance to both Seattle and Redmond</li>
+<li>Distance to Redmond</li>
+<li>Square footage of living space of the nearest 15 neighbors</li>
+</ol>
+<p>The other important features that follows are overall grade related to the construction and design of the house, quality of view from the house, zipcode, whether the house is on a waterfront, and square footage of lot.</p>
+<p><img src="fig10.png" alt="dataviz"></p>
+<p><strong>Model Deployment</strong></p>
+<p>Finally, I deploy the Random Forest regression model (<a href="https://streamlit.io/">demo</a>) as a prototype I develop for a client-facing application that serves as a Home Value Estimator.</p>
+<hr>
+<p>Source Code: <strong><a href="https://github.com/czarinagluna/regression-analysis-for-estimating-prices">Github Repository</a></strong></p>
+
+<h1 id="contact" class="anchor-link"><a href="#contact">Contact</a></h1>
+<p>Feel free to contact me for any questions and connect with me on <a href="https://www.linkedin.com/in/czarinagluna/">Linkedin</a>.</p>
+
+</div>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        <span class="footer-text">
+            <img src="signature.png" width="200px"><br>
+            Copyright 2022. Powered by <a href="https://themes.gohugo.io/themes/hugo-theme-introduction/"><strong>Introduction</strong></a> theme for <a href="http://gohugo.io/">Hugo</a>.
+        </span>
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="//czarinaluna.com/js/bundle.5c23c0437f001a469ca373a465a6f7487203d18e10cdff76d86a60af66d5ee28.js" integrity="sha256-XCPAQ38AGkaco3OkZab3SHID0Y4Qzf922Gpgr2bV7ig="></script>
+
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>

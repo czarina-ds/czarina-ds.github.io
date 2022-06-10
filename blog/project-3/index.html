@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<title>
+Sxsw Conference Sentiment Analysis - Czarina Luna
+</title>
+
+
+
+        
+        <meta property="og:title" content="SXSW Conference Sentiment Analysis - Czarina Luna" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content=""/>
+<meta property="og:url" content="//czarinaluna.com/blog/project-3/"/>
+<meta property="og:site_name" content="Czarina Luna"/>
+
+
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-3/clustering.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-3/fig0.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-3/fig1.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-3/fig13.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-3/fig6.png"/>
+
+
+
+        
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.267a336653a0bbe8778db2ec1104a18aef649cadc8f11b3c527b17612201117b.css" integrity="sha256-JnozZlOgu&#43;h3jbLsEQShiu9knK3I8Rs8UnsXYSIBEXs=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero  fade-in one ">
+                
+
+<h1 class="bold-title is-1">Project</h1>
+
+
+            </div>
+            
+            <div class="section  fade-in two ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/">main</a>
+            
+
+            
+            
+
+            
+                
+            
+
+            
+                
+            
+
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#about">Intro</a>
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="//czarinaluna.com/projects/">
+                  
+                  
+                  Portfolio
+                  
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="//czarinaluna.com/blog/">
+                  
+                  Back to Project
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#interest">Interest</a>
+            
+            
+            
+            
+
+            
+            
+            <a class="navbar-item" href="/#contact">Contact</a>
+            
+            
+
+            
+
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="//czarinaluna.com/blog/project-3/">SXSW Conference Sentiment Analysis</a>
+    </h2>
+    
+    <h4 class="title is-4">
+        
+        By&nbsp;Czarina Luna</h4>
+    
+    <div class="post-data">
+        02 2022
+        
+         | 
+        8 minutes read
+        
+    </div>
+    
+    <div class="blog-share">
+        Share this:
+        
+        <a class="twitter-share-button"
+            href="https://twitter.com/intent/tweet?text=SXSW%20Conference%20Sentiment%20Analysis%20%2f%2fczarinaluna.com%2fblog%2fproject-3%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fab fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</div>
+
+<div class="container markdown top-pad">
+    <p><img src="header.png" alt="header"></p>
+
+<h3 id="i-overview" class="anchor-link"><a href="#i-overview">I. Overview</a></h3>
+<p>An analysis and natural language processing of thousands of tweets is completed to predict sentiments during SXSW and provide insights to brands and products at the conference. Though the extra trees classifier has the highest test accuracy, the Multinomial Naive Bayes model performs the best at classifying negative and positive sentiments. Clustering analysis is performed to identify themes and topics that emerged, and recommendations are made accordingly.</p>
+
+<h3 id="ii-business-problem" class="anchor-link"><a href="#ii-business-problem">II. Business Problem</a></h3>
+<p>South by Southwest (SXSW) is an annual conference where creative industries converge to showcase innovations in technology and the creative arts. The company that organizes the conference may be able to enhance customer experience by detecting and understanding sentiments of the attendees from past conference. Doing so will allow them to gain an understanding of the public opinion about events and brands featured at the conference. Using Twitter data I describe patterns and topics that emerge about the conference and Apple and Google products in particular at the SXSW 2011.</p>
+
+<h3 id="iii-data-understanding" class="anchor-link"><a href="#iii-data-understanding">III. Data Understanding</a></h3>
+<p>The Twitter dataset (<a href="https://github.com/czarinagluna/sxsw-sentiment-analysis/tree/main/data">file</a>) contains over 9,000 tweets posted during the SXSW 2011 which were labeled as <code>negative</code>, <code>positive</code>, and <code>no emotion</code>. The tweets are the independent feature used to predict the multiclass sentiments.</p>
+<p><strong>Class Imbalance</strong></p>
+<img src='fig0.png' width='500x'>
+<pre tabindex="0"><code># Drop values for &#34;cannot tell&#34;
+df = df.drop((df.loc[df[&#39;target&#39;]==&#34;I can&#39;t tell&#34;]).index)
+</code></pre><p>One other feature on the dataset identifies Apple and Google products mentioned in the tweets but almost 6,000 are missing values.</p>
+<details><summary>Code</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>apple <span style="color:#719e07">=</span> [<span style="color:#2aa198">&#39;iPad&#39;</span>, <span style="color:#2aa198">&#39;Apple&#39;</span>, <span style="color:#2aa198">&#39;iPad or iPhone App&#39;</span>, <span style="color:#2aa198">&#39;iPhone&#39;</span>, <span style="color:#2aa198">&#39;Other Apple product or service&#39;</span>]
+</span></span><span style="display:flex;"><span>google <span style="color:#719e07">=</span> [<span style="color:#2aa198">&#39;Google&#39;</span>, <span style="color:#2aa198">&#39;Other Google product or service&#39;</span>, <span style="color:#2aa198">&#39;Android App&#39;</span>, <span style="color:#2aa198">&#39;Android&#39;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>df[<span style="color:#2aa198">&#39;brand&#39;</span>] <span style="color:#719e07">=</span> df[<span style="color:#2aa198">&#39;product&#39;</span>]<span style="color:#719e07">.</span>apply(<span style="color:#719e07">lambda</span> x: <span style="color:#2aa198">&#39;google&#39;</span> <span style="color:#719e07">if</span> x <span style="color:#719e07">in</span> google <span style="color:#719e07">else</span> (<span style="color:#2aa198">&#39;apple&#39;</span> <span style="color:#719e07">if</span> x <span style="color:#719e07">in</span> apple <span style="color:#719e07">else</span> <span style="color:#2aa198">&#39;unknown&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Group products by Apple and Google brands</span>
+</span></span><span style="display:flex;"><span>pd<span style="color:#719e07">.</span>DataFrame(df<span style="color:#719e07">.</span>groupby([<span style="color:#2aa198">&#39;brand&#39;</span>, <span style="color:#2aa198">&#39;target&#39;</span>])[<span style="color:#2aa198">&#39;text&#39;</span>]<span style="color:#719e07">.</span>count())
+</span></span></code></pre></div></details>
+<table>
+<thead>
+<tr>
+<th>brand</th>
+<th>target</th>
+<th>count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apple</td>
+<td>Negative emotion</td>
+<td>387</td>
+</tr>
+<tr>
+<td></td>
+<td>No emotion toward brand or product</td>
+<td>65</td>
+</tr>
+<tr>
+<td></td>
+<td>Positive emotion</td>
+<td>1943</td>
+</tr>
+<tr>
+<td>google</td>
+<td>Negative emotion</td>
+<td>131</td>
+</tr>
+<tr>
+<td></td>
+<td>No emotion toward brand or product</td>
+<td>26</td>
+</tr>
+<tr>
+<td></td>
+<td>Positive emotion</td>
+<td>719</td>
+</tr>
+<tr>
+<td>unknown</td>
+<td>Negative emotion</td>
+<td>51</td>
+</tr>
+<tr>
+<td></td>
+<td>No emotion toward brand or product</td>
+<td>5281</td>
+</tr>
+<tr>
+<td></td>
+<td>Positive emotion</td>
+<td>306</td>
+</tr>
+</tbody>
+</table>
+<p>Apple and Google both received more positive sentiments than negative and more tweets are tagged as Apple than Google overall.</p>
+<pre tabindex="0"><code># Create features for length of tweet by word count and by character
+df[&#39;length&#39;] = df[&#39;text&#39;].apply(lambda x: len(x.split()))
+df[&#39;characters&#39;] = df[&#39;text&#39;].apply(lambda x: len(x))
+</code></pre><p><img src="fig1.png" alt=""></p>
+<p>Graph for word count on the left appears to be about normally distributed. Distribution of character count on the right appears to be slightly skewed to the left. Overall the graphs show no significant difference in the length of tweets among negative, neutral, and positive sentiments.</p>
+
+<h4 id="natural-language-processing" class="anchor-link"><a href="#natural-language-processing">Natural Language Processing</a></h4>
+<p>To process the text data, I perform the following preprocessing steps:</p>
+<p><strong>Basic Cleaning and Tokenization</strong></p>
+<ul>
+<li>Standardization by lowercasing everything</li>
+<li>Remove special characters such as punctuation</li>
+<li>Tokenize to split the string into a list of words</li>
+</ul>
+<p><strong>Lemmatization and Stopwords</strong></p>
+<ul>
+<li>Remove stopwords and other words specific to the data</li>
+<li>Lemmatizate to reduce each word to its most basic form</li>
+</ul>
+<p><strong>Vectorization</strong></p>
+<ul>
+<li>Convert text to vectors as input to machine learning models</li>
+</ul>
+<hr>
+<p>To apply the techniques above, I utilize one of the most popular frameworks for NLP that is the Natural Language Toolkit <code>nltk</code>:</p>
+<details><summary>Code</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>stopwords <span style="color:#719e07">=</span> nltk<span style="color:#719e07">.</span>corpus<span style="color:#719e07">.</span>stopwords<span style="color:#719e07">.</span>words(<span style="color:#2aa198">&#39;english&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Remove words related to the conference and terms specific to the twitter platform</span>
+</span></span><span style="display:flex;"><span>sxsw <span style="color:#719e07">=</span> [<span style="color:#2aa198">&#39;sxsw&#39;</span>, <span style="color:#2aa198">&#39;link&#39;</span>, <span style="color:#2aa198">&#39;quot&#39;</span>, <span style="color:#2aa198">&#39;rt&#39;</span>, <span style="color:#2aa198">&#39;mention&#39;</span>, <span style="color:#2aa198">&#39;apple&#39;</span>, <span style="color:#2aa198">&#39;google&#39;</span>, <span style="color:#2aa198">&#39;iphone&#39;</span>, <span style="color:#2aa198">&#39;ipad&#39;</span>, <span style="color:#2aa198">&#39;ipad2&#39;</span>, <span style="color:#2aa198">&#39;rtmention&#39;</span>]
+</span></span><span style="display:flex;"><span>stopwords<span style="color:#719e07">.</span>extend(sxsw)
+</span></span><span style="display:flex;"><span>text <span style="color:#719e07">=</span> [word <span style="color:#719e07">for</span> word <span style="color:#719e07">in</span> text <span style="color:#719e07">if</span> word <span style="color:#719e07">not</span> <span style="color:#719e07">in</span> stopwords]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lemmatizer <span style="color:#719e07">=</span> nltk<span style="color:#719e07">.</span>stem<span style="color:#719e07">.</span>WordNetLemmatizer()
+</span></span><span style="display:flex;"><span>text <span style="color:#719e07">=</span> [lemmatizer<span style="color:#719e07">.</span>lemmatize(word) <span style="color:#719e07">for</span> word <span style="color:#719e07">in</span> text]
+</span></span></code></pre></div></details>
+<pre tabindex="0"><code># Example
+RT @mention Mayer: 20% of Google searches are for local information #SXSW ^pr
+
+# Result
+[&#39;mayer&#39;, &#39;search&#39;, &#39;local&#39;, &#39;information&#39;]
+</code></pre>
+<h4 id="data-visualization" class="anchor-link"><a href="#data-visualization">Data Visualization</a></h4>
+<p>To highlight significant textual data points, I use the data visualization technique <code>WordCloud</code> which represents the text data and indicates frequencies by the size of words:</p>
+<ul>
+<li><strong>Positive Sentiments about Apple</strong> such as the <code>popup</code> store at the conference.</li>
+</ul>
+<img src='fig6.png' width='300x'>
+<details><summary>Sample tweets</summary>
+<pre tabindex="0"><code>&#34;The #sxsw Apple Popup Store is open at noon, has a fresh shipment of iPad 2&#39;s, and I&#39;m pretty sure I&#39;m going to get one. [fingers crossed]&#34;
+
+&#34;I&#39;ve been having meetings while I&#39;m in line at the #SXSW PopUp Apple Store for the iPad2. I love this place!&#34;
+</code></pre></details>
+<br>
+<ul>
+<li><strong>Negative Sentiments toward Apple</strong> such as Kara Swisher&rsquo;s line <code>Apple is a fascist company</code> during an <a href="https://www.theguardian.com/technology/pda/2011/mar/13/flipboard-sxsw-2011">interview</a> which was quoted all over Twitter.</li>
+</ul>
+<img src='fig7.png' width='300x'>
+<details><summary>Sample tweets</summary>
+<pre tabindex="0"><code>&#34;Too quotable --&amp;gt; RT \x89ÛÏ@mention &amp;quot;Apple is the most elegant fascist company in America.&amp;quot; #flip-board #SXSW&#34;
+
+&#34;Kara Swisher: Apple is the most stylish fascist company in America #sxsw&#34;
+</code></pre></details>
+<br>
+<ul>
+<li><strong>Positive Sentiments about Google</strong> such as <code>Marissa Meyer</code> who was a keynote at the conference.</li>
+</ul>
+<img src='fig8.png' width='300x'>
+<details><summary>Sample tweets</summary>
+<pre tabindex="0"><code>&#34;Racing to ballroom D to see @mention Marissa Mayer. #sxsw #sxswi&#34;
+
+&#34;The quiet before the storm at #SXSW - Looking forward to seeing Google&#39;s Marissa Mayer&#34;
+</code></pre></details>
+<br>
+<ul>
+<li><strong>Negative Sentiments toward Google</strong> such as the words <code>caring much</code> mentioned by Tim O&rsquo;Reilly in one of the <a href="https://www.forbes.com/sites/davidewalt/2011/03/11/tim-oreilly-speaks-at-sxsw/?sh=16c5913721ec">opening sessions</a>.</li>
+</ul>
+<img src='fig9.png' width='300x'>
+<details><summary>Sample tweets</summary>
+<pre tabindex="0"><code>&#34;So true!!! RT @mention &#39;Google lost its way by caring too much for the business vs. the users&#39; - @mention #psych #sxsw&#34;
+
+&#34;I think #Google lost their way by caring too much about their business (instead of their users) Tim O&#39;Reilly #sxsw #pnid&#34;
+</code></pre></details>
+<br>
+<!-- #### Word Embeddings
+
+The `Word2Vec` model is used to create word embeddings. The model computes word vectors using a neural network that results to an embedding space where semantic relationships between the word vectors are captured.
+
+```Python
+# Import Word2Vec from the Gensim library
+from gensim.models import Word2Vec
+from nltk import word_tokenize
+
+wordtovec = X_train_processed.map(word_tokenize)
+
+# Instantiate Word2Vec model
+model = Word2Vec(wordtovec, window=5, min_count=1, workers=4)
+model.train(wordtovec, total_examples=model.corpus_count, epochs=model.epochs)
+
+wv = model.wv
+
+# Create a function to show the most similar words to a given word
+def show_most_similar(word, length=10):
+    '''Returns word vectors with highest similarity.'''
+    return wv.most_similar(word, topn=length)
+```
+
+<br> -->
+
+<h3 id="iv-data-modeling" class="anchor-link"><a href="#iv-data-modeling">IV. Data Modeling</a></h3>
+<p>To begin with, I build a machine learning pipeline using word count vectors and Logistic Regression as the <strong>Baseline Model</strong>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#586e75"># Basic vectorization</span>
+</span></span><span style="display:flex;"><span>cv <span style="color:#719e07">=</span> CountVectorizer(stop_words<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;english&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>baseline_model <span style="color:#719e07">=</span> LogisticRegression(max_iter<span style="color:#719e07">=</span><span style="color:#2aa198">1000</span>, random_state<span style="color:#719e07">=</span><span style="color:#2aa198">112221</span>)
+</span></span><span style="display:flex;"><span>baseline <span style="color:#719e07">=</span> Pipeline(steps<span style="color:#719e07">=</span>[(<span style="color:#2aa198">&#39;vectorizer&#39;</span>, cv), (<span style="color:#2aa198">&#39;baseline&#39;</span>, baseline_model)])
+</span></span><span style="display:flex;"><span>baseline<span style="color:#719e07">.</span>fit(X_train_processed, y_train)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>baseline_pred <span style="color:#719e07">=</span> baseline<span style="color:#719e07">.</span>predict(X_test_processed)
+</span></span></code></pre></div><pre tabindex="0"><code>accuracy_score(y_test, baseline_pred)
+0.6768402154398564
+</code></pre><img src='matrix0.png' width='400x'>
+<p>Then, I change the vectorizer to <code>TfidfVectorizer</code> to use word frequency vectors. <strong>Term Frequency-Inverse Document Frequency</strong> measures <em>the frequency of a word occurring in a document, down-weighted by the number of documents in which it occurs</em> (<a href="https://www.datacamp.com/community/tutorials/recommender-systems-python%5D">source</a>).</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>tfidf <span style="color:#719e07">=</span> TfidfVectorizer(stop_words<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;english&#39;</span>, lowercase<span style="color:#719e07">=</span><span style="color:#cb4b16">False</span>, ngram_range<span style="color:#719e07">=</span>(<span style="color:#2aa198">1</span>,<span style="color:#2aa198">2</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tfidfpipe <span style="color:#719e07">=</span> Pipeline(steps<span style="color:#719e07">=</span>[(<span style="color:#2aa198">&#39;tfidf&#39;</span>, tfidf), (<span style="color:#2aa198">&#39;baseline&#39;</span>, baseline_model)])
+</span></span><span style="display:flex;"><span>tfidfpipe<span style="color:#719e07">.</span>fit(X_train_processed, y_train)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tfidf_pred <span style="color:#719e07">=</span> tfidfpipe<span style="color:#719e07">.</span>predict(X_test_processed)
+</span></span></code></pre></div><pre tabindex="0"><code>accuracy_score(y_test, tfidf_pred)
+0.6885098743267505
+</code></pre><img src='matrix1.png' width='400x'>
+<p>Next, I rebalance the class distribution by <strong>Random Oversampling</strong> that randomly duplicates examples of the minority classes in the train set.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>oversampler <span style="color:#719e07">=</span> RandomOverSampler(sampling_strategy<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;not majority&#39;</span>, random_state<span style="color:#719e07">=</span><span style="color:#2aa198">112221</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>X_train_res, y_train_res <span style="color:#719e07">=</span> oversampler<span style="color:#719e07">.</span>fit_resample(X_train_processed, y_train)
+</span></span><span style="display:flex;"><span>tfidfpipe<span style="color:#719e07">.</span>fit(X_train_res, y_train_res)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>oversampled_pred <span style="color:#719e07">=</span> tfidfpipe<span style="color:#719e07">.</span>predict(X_test_processed)
+</span></span></code></pre></div><pre tabindex="0"><code>accuracy_score(y_test, oversampled_pred)
+0.6651705565529623
+</code></pre><img src='matrix2.png' width='400x'>
+
+<h4 id="classification-algorithms" class="anchor-link"><a href="#classification-algorithms">Classification Algorithms</a></h4>
+<br>
+<ul>
+<li>Logistic Regression</li>
+<li>Multinomial Naive Bayes</li>
+<li>Decision Tree</li>
+<li>Random Forests</li>
+<li>Extra Trees</li>
+<li>Gradient Boost</li>
+<li>Support Vector Machine</li>
+<li>Stochastic Gradient Descent</li>
+</ul>
+<p>A grid search (<a href="https://github.com/czarinagluna/sxsw-sentiment-analysis/blob/main/gridsearch.ipynb">notebook</a>) is implemented to optimize the models by tuning their hyperparameters.</p>
+<p><img src="fig13.png" alt=""></p>
+<p>Across the chart, the Extra Trees classifier attains the best cross validation score of 87% and the highest above at 69% accuracy on the final evaluation using the test set.</p>
+
+<h4 id="clustering-analysis" class="anchor-link"><a href="#clustering-analysis">Clustering Analysis</a></h4>
+<p>Clustering text documents is completed (<a href="https://github.com/czarinagluna/Twitter-Sentiment-Analysis/blob/main/Clustering.ipynb">notebook</a>) using the K-Means clustering algorithm.</p>
+<pre tabindex="0"><code>from gensim.models import Word2Vec
+from sklearn.decomposition import PCA
+
+# Vectorization using Word2Vec model
+model = Word2Vec(corpus, size=100, min_count=1)
+vectors = model[model.wv.vocab]
+words = list(model.wv.vocab)
+
+# Fit PCA to word vectors to reduce dimensionality
+pca = PCA(n_components=2)
+PCA_result = pca.fit_transform(vectors)
+</code></pre><p>To explore a range of different <em>k</em> values, I use the open source data mining toolkit <a href="https://orangedatamining.com/">Orange</a>.</p>
+<hr>
+<p>Here, I set the number of clusters to 6.</p>
+<p><img src="k=6.png" alt=""></p>
+<details><summary>Sample vectors</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:right">x_values</th>
+<th style="text-align:right">y_values</th>
+<th style="text-align:right">count</th>
+<th style="text-align:right">word</th>
+<th style="text-align:right">Cluster</th>
+<th>Silhouette</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">71</td>
+<td style="text-align:right">4.232746</td>
+<td style="text-align:right">-0.236558</td>
+<td style="text-align:right">1528.0</td>
+<td style="text-align:right">store</td>
+<td style="text-align:right">C1</td>
+<td>0.500000</td>
+</tr>
+<tr>
+<td style="text-align:right">122</td>
+<td style="text-align:right">3.200685</td>
+<td style="text-align:right">3.263005</td>
+<td style="text-align:right">683.0</td>
+<td style="text-align:right">launch</td>
+<td style="text-align:right">C3</td>
+<td>0.688537</td>
+</tr>
+<tr>
+<td style="text-align:right">124</td>
+<td style="text-align:right">3.783673</td>
+<td style="text-align:right">4.306313</td>
+<td style="text-align:right">663.0</td>
+<td style="text-align:right">social</td>
+<td style="text-align:right">C3</td>
+<td>0.702629</td>
+</tr>
+<tr>
+<td style="text-align:right">36</td>
+<td style="text-align:right">4.860034</td>
+<td style="text-align:right">-0.365946</td>
+<td style="text-align:right">598.0</td>
+<td style="text-align:right">android</td>
+<td style="text-align:right">C5</td>
+<td>0.577045</td>
+</tr>
+<tr>
+<td style="text-align:right">127</td>
+<td style="text-align:right">3.717602</td>
+<td style="text-align:right">4.206253</td>
+<td style="text-align:right">587.0</td>
+<td style="text-align:right">circle</td>
+<td style="text-align:right">C3</td>
+<td>0.709477</td>
+</tr>
+<tr>
+<td style="text-align:right">129</td>
+<td style="text-align:right">3.582466</td>
+<td style="text-align:right">3.000314</td>
+<td style="text-align:right">577.0</td>
+<td style="text-align:right">today</td>
+<td style="text-align:right">C3</td>
+<td>0.684160</td>
+</tr>
+<tr>
+<td style="text-align:right">125</td>
+<td style="text-align:right">3.420786</td>
+<td style="text-align:right">4.252448</td>
+<td style="text-align:right">467.0</td>
+<td style="text-align:right">network</td>
+<td style="text-align:right">C3</td>
+<td>0.710541</td>
+</tr>
+<tr>
+<td style="text-align:right">131</td>
+<td style="text-align:right">3.671145</td>
+<td style="text-align:right">-0.488340</td>
+<td style="text-align:right">448.0</td>
+<td style="text-align:right">line</td>
+<td style="text-align:right">C5</td>
+<td>0.593595</td>
+</tr>
+<tr>
+<td style="text-align:right">55</td>
+<td style="text-align:right">4.751184</td>
+<td style="text-align:right">-0.324246</td>
+<td style="text-align:right">401.0</td>
+<td style="text-align:right">party</td>
+<td style="text-align:right">C5</td>
+<td>0.613791</td>
+</tr>
+<tr>
+<td style="text-align:right">12</td>
+<td style="text-align:right">4.564972</td>
+<td style="text-align:right">-0.364521</td>
+<td style="text-align:right">388.0</td>
+<td style="text-align:right">free</td>
+<td style="text-align:right">C5</td>
+<td>0.616656</td>
+</tr>
+<tr>
+<td style="text-align:right">126</td>
+<td style="text-align:right">3.150755</td>
+<td style="text-align:right">4.029098</td>
+<td style="text-align:right">354.0</td>
+<td style="text-align:right">called</td>
+<td style="text-align:right">C3</td>
+<td>0.704135</td>
+</tr>
+<tr>
+<td style="text-align:right">150</td>
+<td style="text-align:right">3.845598</td>
+<td style="text-align:right">-0.481109</td>
+<td style="text-align:right">350.0</td>
+<td style="text-align:right">mobile</td>
+<td style="text-align:right">C5</td>
+<td>0.617745</td>
+</tr>
+<tr>
+<td style="text-align:right">107</td>
+<td style="text-align:right">4.905951</td>
+<td style="text-align:right">-0.094086</td>
+<td style="text-align:right">308.0</td>
+<td style="text-align:right">like</td>
+<td style="text-align:right">C5</td>
+<td>0.629237</td>
+</tr>
+<tr>
+<td style="text-align:right">35</td>
+<td style="text-align:right">4.422304</td>
+<td style="text-align:right">-0.238994</td>
+<td style="text-align:right">306.0</td>
+<td style="text-align:right">time</td>
+<td style="text-align:right">C5</td>
+<td>0.635789</td>
+</tr>
+<tr>
+<td style="text-align:right">123</td>
+<td style="text-align:right">2.670568</td>
+<td style="text-align:right">3.579378</td>
+<td style="text-align:right">297.0</td>
+<td style="text-align:right">major</td>
+<td style="text-align:right">C3</td>
+<td>0.690126</td>
+</tr>
+<tr>
+<td style="text-align:right">66</td>
+<td style="text-align:right">4.054464</td>
+<td style="text-align:right">-0.208284</td>
+<td style="text-align:right">266.0</td>
+<td style="text-align:right">check</td>
+<td style="text-align:right">C5</td>
+<td>0.643853</td>
+</tr>
+<tr>
+<td style="text-align:right">328</td>
+<td style="text-align:right">1.481872</td>
+<td style="text-align:right">0.303663</td>
+<td style="text-align:right">265.0</td>
+<td style="text-align:right">temporary</td>
+<td style="text-align:right">C4</td>
+<td>0.533009</td>
+</tr>
+<tr>
+<td style="text-align:right">173</td>
+<td style="text-align:right">1.414922</td>
+<td style="text-align:right">0.327291</td>
+<td style="text-align:right">256.0</td>
+<td style="text-align:right">opening</td>
+<td style="text-align:right">C4</td>
+<td>0.529419</td>
+</tr>
+<tr>
+<td style="text-align:right">168</td>
+<td style="text-align:right">3.046756</td>
+<td style="text-align:right">-0.464477</td>
+<td style="text-align:right">255.0</td>
+<td style="text-align:right">open</td>
+<td style="text-align:right">C5</td>
+<td>0.603515</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td style="text-align:right">3.982835</td>
+<td style="text-align:right">0.020949</td>
+<td style="text-align:right">238.0</td>
+<td style="text-align:right">need</td>
+<td style="text-align:right">C5</td>
+<td>0.634428</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p><strong>Silhouette Scores</strong></p>
+<table>
+<thead>
+<tr>
+<th>Cluster</th>
+<th>count</th>
+<th>mean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1</td>
+<td>1</td>
+<td>0.500000</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>544</td>
+<td>0.671562</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>8</td>
+<td>0.694157</td>
+</tr>
+<tr>
+<td>C4</td>
+<td>112</td>
+<td>0.621268</td>
+</tr>
+<tr>
+<td>C5</td>
+<td>60</td>
+<td>0.598980</td>
+</tr>
+<tr>
+<td>C6</td>
+<td>275</td>
+<td>0.598727</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>Cluster <code>WordClouds</code></p>
+<p><img src="clustering.png" alt=""></p>
+<p>Clustering shows interesting results. Cluster 3 for instance contains the exact words describing a major event that was supposedly the launch of Google&rsquo;s major social network called Circles &ldquo;possibly today&rdquo;—did <em>not</em> actually happen but still talked about a lot at the conference.</p>
+
+<h3 id="v-results-and-recommendations" class="anchor-link"><a href="#v-results-and-recommendations">V. Results and Recommendations</a></h3>
+<p>Comparing the confusion matrices of the models, the final model that performs best is the <strong>Multinomial Naive Bayes</strong>.</p>
+<p><img src="multinomial.png" alt=""></p>
+<p>Though the Extra Trees classifier has a higher accuracy, it performs worse on the specific tasks of detecting negative and positive sentiments.</p>
+<ul>
+<li>The misclassification of negative sentiments can be <em>more costly</em> to the conference organizers and companies featured at the events if more negative sentiments are spread online and missed.</li>
+<li>The correct classification of positive sentiments can be more beneficial to understanding of the users to continue providing satisfaction.</li>
+</ul>
+<hr>
+<p>The <strong>Final Model</strong> increases the number of True Negatives from the baseline model by half to 57% and the number of True Positives to 62% which are the highest among all the other models:</p>
+<p><img src="final.png" alt=""></p>
+
+<h4 id="recommendations" class="anchor-link"><a href="#recommendations">Recommendations</a></h4>
+<ul>
+<li>
+<p>Detect sentiments during the conference using the machine learning model to predict positive and negative sentiments. Positive sentiments can be shared and negative sentiments can be addressed by responding to the concerns.</p>
+</li>
+<li>
+<p>Present findings to the companies at the conference to receive feedback as a guide to provide better services for next year. Products such as Google Circles could use the excitement and speculation during the conference.</p>
+</li>
+<li>
+<p>Highlight the remarks that drive positive sentiments as predicted by the model using natural language processing. Quote the speakers to facilitate further discussion among attendees and increase user engagement.</p>
+</li>
+</ul>
+<hr>
+<p>Source Code: <strong><a href="https://github.com/czarinagluna/sxsw-sentiment-analysis/blob/main/main.ipynb">Github Repository</a></strong></p>
+
+<h1 id="contact" class="anchor-link"><a href="#contact">Contact</a></h1>
+<p>Feel free to contact me for any questions and connect with me on <a href="https://www.linkedin.com/in/czarinagluna/">Linkedin</a>.</p>
+
+</div>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        <span class="footer-text">
+            <img src="signature.png" width="200px"><br>
+            Copyright 2022. Powered by <a href="https://themes.gohugo.io/themes/hugo-theme-introduction/"><strong>Introduction</strong></a> theme for <a href="http://gohugo.io/">Hugo</a>.
+        </span>
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="//czarinaluna.com/js/bundle.5c23c0437f001a469ca373a465a6f7487203d18e10cdff76d86a60af66d5ee28.js" integrity="sha256-XCPAQ38AGkaco3OkZab3SHID0Y4Qzf922Gpgr2bV7ig="></script>
+
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>

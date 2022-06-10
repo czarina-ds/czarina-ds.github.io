@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<title>
+Machine Learning Powered Video Library - Czarina Luna
+</title>
+
+
+
+        
+        <meta property="og:title" content="⭐ Machine Learning-Powered Video Library - Czarina Luna" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content=""/>
+<meta property="og:url" content="//czarinaluna.com/blog/project-5/"/>
+<meta property="og:site_name" content="Czarina Luna"/>
+
+
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-5/app.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-5/cnn.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-5/signature.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-5/yolo.png"/>
+
+
+
+        
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.267a336653a0bbe8778db2ec1104a18aef649cadc8f11b3c527b17612201117b.css" integrity="sha256-JnozZlOgu&#43;h3jbLsEQShiu9knK3I8Rs8UnsXYSIBEXs=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero  fade-in one ">
+                
+
+<h1 class="bold-title is-1">Project</h1>
+
+
+            </div>
+            
+            <div class="section  fade-in two ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/">main</a>
+            
+
+            
+            
+
+            
+                
+            
+
+            
+                
+            
+
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#about">Intro</a>
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="//czarinaluna.com/projects/">
+                  
+                  
+                  Portfolio
+                  
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="//czarinaluna.com/blog/">
+                  
+                  Back to Project
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#interest">Interest</a>
+            
+            
+            
+            
+
+            
+            
+            <a class="navbar-item" href="/#contact">Contact</a>
+            
+            
+
+            
+
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="//czarinaluna.com/blog/project-5/">⭐ Machine Learning-Powered Video Library</a>
+    </h2>
+    
+    <h4 class="title is-4">
+        
+        By&nbsp;Czarina Luna</h4>
+    
+    <div class="post-data">
+        04 2022
+        
+         | 
+        12 minutes read
+        
+    </div>
+    
+    <div class="blog-share">
+        Share this:
+        
+        <a class="twitter-share-button"
+            href="https://twitter.com/intent/tweet?text=%e2%ad%90%20Machine%20Learning-Powered%20Video%20Library%20%2f%2fczarinaluna.com%2fblog%2fproject-5%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fab fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</div>
+
+<div class="container markdown top-pad">
+    <p>Video sharing applications today lack the functionality for users to search videos by their content. As a solution I developed a searchable video library that processes videos and returns exact matches to queries using machine learning and artificial intelligence including speech recognition, optical character recognition, and object detection.</p>
+<p><img src="app.png" alt=""></p>
+<p><a href="https://share.streamlit.io/czarinagluna/ml-powered-video-library/main">Link to Web Application</a></p>
+
+<h3 id="business-problem" class="anchor-link"><a href="#business-problem">Business Problem</a></h3>
+<p>Applications for video sharing and storage may be able to enhance user experience by allowing users to search for videos by their content, such as specific words or objects in the video. One of the most popular video sharing apps right now is TikTok where users can save the videos they like to their profile but yet cannot search through the liked videos.</p>
+<p>As it lacks that functionality, its millions of users are forced to scroll through every single video they have ever liked to find one single clip, and over again. To address this problem, I create a library of TikTok videos and build a search engine that breaks down the videos into several features and returns exact matches to any given query.</p>
+
+<h3 id="data-and-methodology" class="anchor-link"><a href="#data-and-methodology">Data and Methodology</a></h3>
+<p>A sample of 140 videos are provided in the <a href="https://github.com/czarinagluna/ml-video-library/tree/main/data/videos">videos</a> folder of this repository for the purpose of demonstrating the end-to-end process I performed. This set of sample is originally saved from my personal user account, and in addition, I downloaded two datasets each containing 1000 videos from Kaggle (found <a href="https://www.kaggle.com/datasets/marqueurs404/tiktok-trending-videos">here</a> and <a href="https://www.kaggle.com/datasets/erikvdven/tiktok-trending-december-2020?select=videos">here</a>). Altogether I analyzed over 2000 videos for the whole project, which I uploaded on <a href="https://drive.google.com/drive/folders/1-OMkbBMzBGWH9PVU0ojZACtnFlP3ANbE?usp=sharing">Google Drive</a>. You may download all the videos to explore the complete dataset.</p>
+<p><strong>Multimedia Data</strong></p>
+<p>A video is a complex data type that can be broken down in a lot of different ways. Through feature engineering, I turned the raw videos into multiple data features that I extracted using the following approaches:</p>
+<ul>
+<li>Converting the video to audio and transcribing the speech</li>
+<li>Breaking down the video as a sequence of images or frames
+<ul>
+<li>Recognizing on-screen text in the video frames</li>
+<li>Detecting image objects in the video frames</li>
+</ul>
+</li>
+</ul>
+<p><strong>Data Processing</strong></p>
+<ol>
+<li>Audio processing using <code>moviepy</code>, <code>pydub</code>, and <code>speech_recognition</code></li>
+<li>Optical character recognition using <code>opencv-python</code>, <code>PIL</code>, and <code>pytesseract</code></li>
+<li>Object detection using <code>opencv-python</code> and <code>YOLOv3</code> algorithm</li>
+</ol>
+<p>Using the above packages and models, the features are extracted as text and so I applied Natural Language Processing (NLP) to process the text and to create a corpus of all the words to search through. Lastly, I built the search engine using <code>BM25</code> and deployed the full app via Streamlit.</p>
+
+<h3 id="video-processing" class="anchor-link"><a href="#video-processing">Video Processing</a></h3>
+<br>
+<h4>I. Audio Processing</h4>
+<p>The first feature to extract from the videos is audio. Audio processing is the fastest part in the full process of feature engineering.</p>
+<ul>
+<li>To create the audio file, the video formatted as <em>mov</em> or <em>mp4</em> is converted to a <em>wav</em> file.</li>
+<li>The audio file is sliced into smaller chunks of audio, split by silence of 500 milliseconds or more, for faster processing.</li>
+<li>To recognize the contents, I create an instance of the <code>Recognizer</code> class and call the method <code>recognize_google</code>.</li>
+<li>The full transcription is stored in a text file, which is returned by the function I define as <code>transcribe_audio</code>.</li>
+</ul>
+<details><summary>Code</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">transcribe_audio</span>(file_path):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Converts video to audio and returns audio transcription.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Parameters:
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    file_path (str): file path of video to be transcribed.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Returns:
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    full_text (str): full text transcription of video&#39;s audio.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Write the audio file from the video using MoviePy</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># to convert the MP4 or MOV video format to a wav file</span>
+</span></span><span style="display:flex;"><span>    transcribed_audio_file <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;./data/audio/transcribed_audio.wav&#39;</span>
+</span></span><span style="display:flex;"><span>    audioclip <span style="color:#719e07">=</span> AudioFileClip(file_path)
+</span></span><span style="display:flex;"><span>    audioclip<span style="color:#719e07">.</span>write_audiofile(transcribed_audio_file)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">try</span>:
+</span></span><span style="display:flex;"><span>        sound <span style="color:#719e07">=</span> AudioSegment<span style="color:#719e07">.</span>from_file(file_path, <span style="color:#2aa198">&#39;mp3&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">except</span>:
+</span></span><span style="display:flex;"><span>        sound <span style="color:#719e07">=</span> AudioSegment<span style="color:#719e07">.</span>from_file(file_path, <span style="color:#b58900">format</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;mp4&#39;</span>)    
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Split the wav file into chunks where there is silence </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># for 500 milliseconds or more using PyDub</span>
+</span></span><span style="display:flex;"><span>    chunks <span style="color:#719e07">=</span> split_on_silence(sound, min_silence_len <span style="color:#719e07">=</span> <span style="color:#2aa198">500</span>, 
+</span></span><span style="display:flex;"><span>                              silence_thresh <span style="color:#719e07">=</span> sound<span style="color:#719e07">.</span>dBFS<span style="color:#719e07">-</span><span style="color:#2aa198">14</span>, keep_silence<span style="color:#719e07">=</span><span style="color:#2aa198">500</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Create a folder called audio_chunks to save the chunks of wav files</span>
+</span></span><span style="display:flex;"><span>    folder_name <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;./data/audio/audio_chunks&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">if</span> <span style="color:#719e07">not</span> os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>isdir(folder_name):
+</span></span><span style="display:flex;"><span>        os<span style="color:#719e07">.</span>mkdir(folder_name)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    full_text <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Create an instance of the Recognizer class from SpeechRecognition</span>
+</span></span><span style="display:flex;"><span>    r <span style="color:#719e07">=</span> sr<span style="color:#719e07">.</span>Recognizer()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Call the method that uses Google Speech Recognition API</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># to transcribe the audio and return a string of text</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">for</span> i, audio_chunk <span style="color:#719e07">in</span> <span style="color:#b58900">enumerate</span>(chunks, start<span style="color:#719e07">=</span><span style="color:#2aa198">1</span>):
+</span></span><span style="display:flex;"><span>        chunk_filename <span style="color:#719e07">=</span> os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>join(folder_name, <span style="color:#2aa198">f</span><span style="color:#2aa198">&#39;chunk</span><span style="color:#2aa198">{</span>i<span style="color:#2aa198">}</span><span style="color:#2aa198">.wav&#39;</span>)
+</span></span><span style="display:flex;"><span>        audio_chunk<span style="color:#719e07">.</span>export(chunk_filename, <span style="color:#b58900">format</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#39;wav&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">with</span> sr<span style="color:#719e07">.</span>AudioFile(chunk_filename) <span style="color:#719e07">as</span> source:
+</span></span><span style="display:flex;"><span>            audio_listened <span style="color:#719e07">=</span> r<span style="color:#719e07">.</span>record(source)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#719e07">try</span>:
+</span></span><span style="display:flex;"><span>                text <span style="color:#719e07">=</span> r<span style="color:#719e07">.</span>recognize_google(audio_listened)
+</span></span><span style="display:flex;"><span>            <span style="color:#719e07">except</span> sr<span style="color:#719e07">.</span>UnknownValueError <span style="color:#719e07">as</span> e:
+</span></span><span style="display:flex;"><span>                <span style="color:#b58900">print</span>(<span style="color:#2aa198">&#39;Error:&#39;</span>, <span style="color:#b58900">str</span>(e))
+</span></span><span style="display:flex;"><span>            <span style="color:#719e07">else</span>:
+</span></span><span style="display:flex;"><span>                text <span style="color:#719e07">=</span> <span style="color:#2aa198">f</span><span style="color:#2aa198">&#39;</span><span style="color:#2aa198">{</span>text<span style="color:#719e07">.</span>capitalize()<span style="color:#2aa198">}</span><span style="color:#2aa198">.&#39;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#b58900">print</span>(chunk_filename, <span style="color:#2aa198">&#39;:&#39;</span>, text)
+</span></span><span style="display:flex;"><span>                full_text <span style="color:#719e07">+=</span> text
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> full_text
+</span></span></code></pre></div></details>
+<br>
+<h4>II. Extracting Visual Text</h4>
+<p>The other features to extract from the videos are visual content. Extracting visual text is a faster process than extracting the visual objects.</p>
+<ul>
+<li>To create the sequence of images, the video is broken down into frames by <code>VideoCapture</code> in the function I define as <code>save_frames</code>.</li>
+<li>The images are captured every <em>n</em>th frame and then opened with the python imaging library.</li>
+<li>To recognize the text, the image frames are passed onto the method <code>image_to_string</code>.</li>
+<li>The extracted text is returned by the function I define as <code>extract_visual_text</code> and processed later using NLP.</li>
+</ul>
+<details><summary>Code</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>image_frames <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;./data/images/image_frames&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">save_frames</span>(file_path):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Creates image folder and saves video frames in the folder.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Parameters:
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    file_path (str): file path of video to be captured as images.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Returns:
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    image_frames folder where the video frames are stored.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">try</span>:
+</span></span><span style="display:flex;"><span>        os<span style="color:#719e07">.</span>remove(image_frames)
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">except</span> <span style="color:#cb4b16">OSError</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">pass</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Create a folder called image_frames to save the images or frames of the video</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">if</span> <span style="color:#719e07">not</span> os<span style="color:#719e07">.</span>path<span style="color:#719e07">.</span>exists(image_frames):
+</span></span><span style="display:flex;"><span>        os<span style="color:#719e07">.</span>makedirs(image_frames)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Capture every 20th frame of the video using cv2 from OpenCV and save to folder</span>
+</span></span><span style="display:flex;"><span>    src_vid <span style="color:#719e07">=</span> cv2<span style="color:#719e07">.</span>VideoCapture(file_path)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    index <span style="color:#719e07">=</span> <span style="color:#2aa198">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">while</span> src_vid<span style="color:#719e07">.</span>isOpened():
+</span></span><span style="display:flex;"><span>        ret, frame <span style="color:#719e07">=</span> src_vid<span style="color:#719e07">.</span>read()
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">if</span> <span style="color:#719e07">not</span> ret:
+</span></span><span style="display:flex;"><span>            <span style="color:#719e07">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        name <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;./data/images/image_frames/frame&#39;</span> <span style="color:#719e07">+</span> <span style="color:#b58900">str</span>(index) <span style="color:#719e07">+</span> <span style="color:#2aa198">&#39;.png&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">if</span> index <span style="color:#719e07">%</span> <span style="color:#2aa198">20</span> <span style="color:#719e07">==</span> <span style="color:#2aa198">0</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#b58900">print</span>(<span style="color:#2aa198">&#39;Extracting frames...&#39;</span> <span style="color:#719e07">+</span> name)
+</span></span><span style="display:flex;"><span>            cv2<span style="color:#719e07">.</span>imwrite(name, frame)
+</span></span><span style="display:flex;"><span>        index <span style="color:#719e07">=</span> index <span style="color:#719e07">+</span> <span style="color:#2aa198">1</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">if</span> cv2<span style="color:#719e07">.</span>waitKey(<span style="color:#2aa198">10</span>) <span style="color:#719e07">&amp;</span> <span style="color:#2aa198">0xFF</span> <span style="color:#719e07">==</span> <span style="color:#b58900">ord</span>(<span style="color:#2aa198">&#39;q&#39;</span>):
+</span></span><span style="display:flex;"><span>            <span style="color:#719e07">break</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    src_vid<span style="color:#719e07">.</span>release()
+</span></span><span style="display:flex;"><span>    cv2<span style="color:#719e07">.</span>destroyAllWindows()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">extract_visual_text</span>(file_path):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Extracts visual text from images saved of video frames.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Parameters:
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    file_path (str): file path of video from which to extract the visual text.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Returns:
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    full_text (str): text as seen in the video taken from every 20th frame.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    save_frames(file_path)
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">print</span>(<span style="color:#2aa198">&#39;Folder created.&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    text_list <span style="color:#719e07">=</span> []
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Sort the frames in the folder using the function above for correct ordering</span>
+</span></span><span style="display:flex;"><span>    image_list <span style="color:#719e07">=</span> sorted_alphanumeric(os<span style="color:#719e07">.</span>listdir(image_frames))
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Open each image frame using PIL, and pass as argument in a function that uses </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Google Tesseract OCR to recognize text in the image</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">for</span> i <span style="color:#719e07">in</span> image_list:
+</span></span><span style="display:flex;"><span>        <span style="color:#b58900">print</span>(<span style="color:#b58900">str</span>(i))
+</span></span><span style="display:flex;"><span>        single_frame <span style="color:#719e07">=</span> Image<span style="color:#719e07">.</span>open(image_frames <span style="color:#719e07">+</span> <span style="color:#2aa198">&#39;/&#39;</span> <span style="color:#719e07">+</span> i)
+</span></span><span style="display:flex;"><span>        text <span style="color:#719e07">=</span> pytesseract<span style="color:#719e07">.</span>image_to_string(single_frame, lang<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;eng&#39;</span>)
+</span></span><span style="display:flex;"><span>        text_list<span style="color:#719e07">.</span>append(text)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Remove the new line character `\n` and the word TikTok </span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># from the strings of text returned and joined together</span>
+</span></span><span style="display:flex;"><span>    full_text <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39; &#39;</span><span style="color:#719e07">.</span>join([i <span style="color:#719e07">for</span> i <span style="color:#719e07">in</span> text_list])
+</span></span><span style="display:flex;"><span>    full_text <span style="color:#719e07">=</span> full_text<span style="color:#719e07">.</span>replace(<span style="color:#2aa198">&#39;</span><span style="color:#cb4b16">\n</span><span style="color:#2aa198">&#39;</span>, <span style="color:#2aa198">&#39;&#39;</span>)<span style="color:#719e07">.</span>replace(<span style="color:#2aa198">&#39;</span><span style="color:#cb4b16">\x0c</span><span style="color:#2aa198">&#39;</span>, <span style="color:#2aa198">&#39;&#39;</span>)<span style="color:#719e07">.</span>replace(<span style="color:#2aa198">&#39;TikTok&#39;</span>, <span style="color:#2aa198">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#586e75"># Remove the folder to erase the image frames of the video</span>
+</span></span><span style="display:flex;"><span>    shutil<span style="color:#719e07">.</span>rmtree(<span style="color:#2aa198">&#39;./data/images/image_frames/&#39;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">print</span>(<span style="color:#2aa198">&#39;Folder removed.&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> full_text
+</span></span></code></pre></div></details>
+<hr>
+<p>To extract the username from the visual text, I define the function <code>extract_username</code> that executes the following steps:</p>
+<ul>
+<li>Create a list of all words in the string of words lowercased.</li>
+<li>Create another list of the strings that start with the sign &lsquo;@&rsquo;.</li>
+<li>Return the most frequent word in the list using the function <code>most_frequent</code>.</li>
+</ul>
+<p>The most frequent word is most likely the username because TikTok automatically displays it for the full duration of the video, as in every single video frame.</p>
+<details><summary>Code</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">most_frequent</span>(username_list):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;Takes in a list of strings and return the most frequent word in the list or none.&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    most_frequent <span style="color:#719e07">=</span> <span style="color:#b58900">max</span>(<span style="color:#b58900">set</span>(username_list), key <span style="color:#719e07">=</span> username_list<span style="color:#719e07">.</span>count)
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">if</span> most_frequent <span style="color:#719e07">==</span> <span style="color:#2aa198">&#39;&#39;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">return</span> np<span style="color:#719e07">.</span>nan
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">else</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">return</span> most_frequent
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">extract_username</span>(visual_text):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Lists possible usernames from visual text and returns the most frequent one that may most likely be the username.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Parameters:
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    visual_text (str): full visual text extracted from video.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Returns:
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    username (str): most frequent word that starts with @ sign; if none, returns none.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    visual_text <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39;&#39;</span><span style="color:#719e07">.</span>join([i <span style="color:#719e07">for</span> i <span style="color:#719e07">in</span> visual_text<span style="color:#719e07">.</span>lower() <span style="color:#719e07">if</span> <span style="color:#719e07">not</span> i<span style="color:#719e07">.</span>isdigit()])
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    text <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39; &#39;</span><span style="color:#719e07">.</span>join(visual_text<span style="color:#719e07">.</span>split())
+</span></span><span style="display:flex;"><span>    text_list <span style="color:#719e07">=</span> [word <span style="color:#719e07">for</span> word <span style="color:#719e07">in</span> text<span style="color:#719e07">.</span>lower()<span style="color:#719e07">.</span>split()]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    username_list <span style="color:#719e07">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">for</span> word <span style="color:#719e07">in</span> text_list:
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">if</span> re<span style="color:#719e07">.</span>search(<span style="color:#2aa198">r</span><span style="color:#2aa198">&#39;[@]&#39;</span>, word):
+</span></span><span style="display:flex;"><span>            username_list<span style="color:#719e07">.</span>extend([word<span style="color:#719e07">.</span>rsplit(<span style="color:#2aa198">&#39;@&#39;</span>)[<span style="color:#719e07">-</span><span style="color:#2aa198">1</span>]])
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">if</span> username_list <span style="color:#719e07">==</span> []:
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">return</span> np<span style="color:#719e07">.</span>nan
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">else</span>:
+</span></span><span style="display:flex;"><span>        username_list <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39; &#39;</span><span style="color:#719e07">.</span>join([username <span style="color:#719e07">for</span> username <span style="color:#719e07">in</span> username_list])
+</span></span><span style="display:flex;"><span>        username_list <span style="color:#719e07">=</span> [username <span style="color:#719e07">for</span> username <span style="color:#719e07">in</span> username_list<span style="color:#719e07">.</span>strip()<span style="color:#719e07">.</span>split()]
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">try</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#719e07">return</span> most_frequent(username_list)
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">except</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#719e07">return</span> <span style="color:#2aa198">&#39; &#39;</span><span style="color:#719e07">.</span>join(username_list)
+</span></span></code></pre></div></details>
+<br>
+<h4>III. Detecting Image Object</h4>
+<p>The final feature to extract are objects in the videos, which is accomplished by the state-of-the-art object detection system YOLO that uses a deep learning algorithm.</p>
+<p><strong>Deep Learning</strong></p>
+<p><a href="https://pjreddie.com/darknet/yolo/">YOLO</a> applies a convolutional neural network with this network architecture.
+<img src="cnn.png" alt=""></p>
+<p>Image Source: <a href="https://arxiv.org/pdf/1506.02640.pdf">https://arxiv.org/pdf/1506.02640.pdf</a></p>
+<p>Compared to prior object detection systems YOLO uses a totally different approach—the network looks at the image once. Thus, the name <em>You Only Look Once</em>.</p>
+<ul>
+<li>The input image is divided into a grid of <em>x</em> by <em>x</em> number of cells.</li>
+<li>Around the cells, bounding boxes are predicted with confidence scores.</li>
+<li>Class probabilities are mapped, with the bounding boxes weighted by the predictions.</li>
+<li>The output of objects detected are displayed if the threshold set is met.</li>
+</ul>
+<p>An example frame to illustrate:</p>
+<p><img src="yolo.png" alt=""></p>
+<p><strong>Transfer Learning</strong></p>
+<p>The weights from the YOLO pre-trained network model are adapted to our data. To load the network model, download the weight and configuration files from Darknet. The configuration file describes the layout of the network by block.</p>
+<blockquote>
+<p>&ldquo;YOLOv3 is extremely fast and accurate. In mAP measured at .5 IOU YOLOv3 is on par with Focal Loss but about 4x faster. Moreover, you can easily tradeoff between speed and accuracy simply by changing the size of the model, no retraining required!&rdquo; (<a href="https://pjreddie.com/darknet/yolo">Darknet</a>)</p>
+</blockquote>
+<p>Choosing <code>YOLOv3-spp</code> for accuracy, the model with the highest mean average precision of 60.6 performed on the COCO <a href="https://cocodataset.org/#home">dataset</a> and for speed, you may try the model with the highest frame per second of 220 which is <code>YOLOv3-tiny</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#586e75"># Load the network model into OpenCV using the configuration and weight files </span>
+</span></span><span style="display:flex;"><span>net <span style="color:#719e07">=</span> cv2<span style="color:#719e07">.</span>dnn<span style="color:#719e07">.</span>readNetFromDarknet(<span style="color:#2aa198">&#39;./data/yolo/yolov3-spp.cfg&#39;</span>, <span style="color:#2aa198">&#39;./data/yolo/yolov3-spp.weights&#39;</span>)
+</span></span></code></pre></div><p>This YOLO neural network consists of 263 parts such as convolutional layers (<code>conv</code>), batch normalization (<code>bn</code>) etc.</p>
+<p>Printing them&hellip;</p>
+<p><code>ln = net.getLayerNames() print(len(ln), ln)</code></p>
+<p>&hellip;returns the following:</p>
+<p><code>263 ('conv_0', 'bn_0', 'leaky_1', 'conv_1', 'bn_1', 'leaky_2', 'conv_2', 'bn_2', 'leaky_3', 'conv_3', 'bn_3', 'leaky_4', 'shortcut_4', 'conv_5', 'bn_5', 'leaky_6', 'conv_6', 'bn_6', 'leaky_7', 'conv_7', 'bn_7', 'leaky_8', 'shortcut_8', 'conv_9', 'bn_9', 'leaky_10', ...)</code></p>
+<p><strong>COCO</strong></p>
+<p>To get the labels of the model trained on the COCO dataset, download the <a href="https://github.com/pjreddie/darknet/blob/master/data/coco.names">COCO</a> name file that contains the names of all the classes—the model can detect a total of 80 objects. A full list of object classes is provided in the name file, along with the weights and configuration files available in the <a href="https://github.com/czarinagluna/ml-video-library/tree/main/data/yolo">data</a> folder of the repository.</p>
+<ul>
+<li>The objects detected are returned by the function I define as <code>detect_object</code>.</li>
+</ul>
+<details><summary>Code</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">detect_object</span>(file_path):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Uses YOLO algorithm to detect objects in video frames.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Parameters:
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    file_path (str): file path of video from which to detect objects in the frames.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Returns:
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    object_set (list): list of unique objects detected in the video.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    classes <span style="color:#719e07">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">with</span> <span style="color:#b58900">open</span>(<span style="color:#2aa198">&#39;./data/yolo/coco.names&#39;</span>, <span style="color:#2aa198">&#39;r&#39;</span>) <span style="color:#719e07">as</span> f:
+</span></span><span style="display:flex;"><span>        classes <span style="color:#719e07">=</span> f<span style="color:#719e07">.</span>read()<span style="color:#719e07">.</span>splitlines()
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">try</span>:
+</span></span><span style="display:flex;"><span>        cap <span style="color:#719e07">=</span> cv2<span style="color:#719e07">.</span>VideoCapture(file_path)
+</span></span><span style="display:flex;"><span>        count <span style="color:#719e07">=</span> <span style="color:#2aa198">0</span>
+</span></span><span style="display:flex;"><span>        object_list <span style="color:#719e07">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">while</span> cap<span style="color:#719e07">.</span>isOpened():
+</span></span><span style="display:flex;"><span>            ret, img <span style="color:#719e07">=</span> cap<span style="color:#719e07">.</span>read()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#719e07">if</span> <span style="color:#719e07">not</span> ret:
+</span></span><span style="display:flex;"><span>                <span style="color:#719e07">break</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#719e07">if</span> ret:
+</span></span><span style="display:flex;"><span>                cv2<span style="color:#719e07">.</span>imwrite(<span style="color:#2aa198">&#39;frame</span><span style="color:#2aa198">{:d}</span><span style="color:#2aa198">.jpg&#39;</span><span style="color:#719e07">.</span>format(count), img)
+</span></span><span style="display:flex;"><span>                count <span style="color:#719e07">+=</span> <span style="color:#2aa198">50</span>
+</span></span><span style="display:flex;"><span>                cap<span style="color:#719e07">.</span>set(cv2<span style="color:#719e07">.</span>CAP_PROP_POS_FRAMES, count)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                height, width, _ <span style="color:#719e07">=</span> img<span style="color:#719e07">.</span>shape
+</span></span><span style="display:flex;"><span>                blob <span style="color:#719e07">=</span> cv2<span style="color:#719e07">.</span>dnn<span style="color:#719e07">.</span>blobFromImage(img, <span style="color:#2aa198">1</span><span style="color:#719e07">/</span><span style="color:#2aa198">255</span>, (<span style="color:#2aa198">416</span>, <span style="color:#2aa198">416</span>), (<span style="color:#2aa198">0</span>,<span style="color:#2aa198">0</span>,<span style="color:#2aa198">0</span>), swapRB<span style="color:#719e07">=</span><span style="color:#cb4b16">True</span>, crop<span style="color:#719e07">=</span><span style="color:#cb4b16">False</span>)
+</span></span><span style="display:flex;"><span>                net<span style="color:#719e07">.</span>setInput(blob)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                output_layers_names <span style="color:#719e07">=</span> net<span style="color:#719e07">.</span>getUnconnectedOutLayersNames()
+</span></span><span style="display:flex;"><span>                layerOutputs <span style="color:#719e07">=</span> net<span style="color:#719e07">.</span>forward(output_layers_names)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                boxes <span style="color:#719e07">=</span> []
+</span></span><span style="display:flex;"><span>                confidences <span style="color:#719e07">=</span> []
+</span></span><span style="display:flex;"><span>                class_ids <span style="color:#719e07">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#719e07">for</span> output <span style="color:#719e07">in</span> layerOutputs:
+</span></span><span style="display:flex;"><span>                    <span style="color:#719e07">for</span> detection <span style="color:#719e07">in</span> output:
+</span></span><span style="display:flex;"><span>                        scores <span style="color:#719e07">=</span> detection[<span style="color:#2aa198">5</span>:]
+</span></span><span style="display:flex;"><span>                        class_id <span style="color:#719e07">=</span> np<span style="color:#719e07">.</span>argmax(scores)
+</span></span><span style="display:flex;"><span>                        confidence <span style="color:#719e07">=</span> scores[class_id]
+</span></span><span style="display:flex;"><span>                        <span style="color:#719e07">if</span> confidence <span style="color:#719e07">&gt;</span> <span style="color:#2aa198">0.5</span>:
+</span></span><span style="display:flex;"><span>                            center_x <span style="color:#719e07">=</span> <span style="color:#b58900">int</span>(detection[<span style="color:#2aa198">0</span>]<span style="color:#719e07">*</span>width)
+</span></span><span style="display:flex;"><span>                            center_y <span style="color:#719e07">=</span> <span style="color:#b58900">int</span>(detection[<span style="color:#2aa198">1</span>]<span style="color:#719e07">*</span>height)
+</span></span><span style="display:flex;"><span>                            w <span style="color:#719e07">=</span> <span style="color:#b58900">int</span>(detection[<span style="color:#2aa198">2</span>]<span style="color:#719e07">*</span>width)
+</span></span><span style="display:flex;"><span>                            h <span style="color:#719e07">=</span> <span style="color:#b58900">int</span>(detection[<span style="color:#2aa198">3</span>]<span style="color:#719e07">*</span>height)
+</span></span><span style="display:flex;"><span>                            x <span style="color:#719e07">=</span> <span style="color:#b58900">int</span>(center_x <span style="color:#719e07">-</span> w<span style="color:#719e07">/</span><span style="color:#2aa198">2</span>)
+</span></span><span style="display:flex;"><span>                            y <span style="color:#719e07">=</span> <span style="color:#b58900">int</span>(center_y <span style="color:#719e07">-</span> h<span style="color:#719e07">/</span><span style="color:#2aa198">2</span>)
+</span></span><span style="display:flex;"><span>                            boxes<span style="color:#719e07">.</span>append([x, y, w, h])
+</span></span><span style="display:flex;"><span>                            confidences<span style="color:#719e07">.</span>append(<span style="color:#b58900">float</span>(confidence))
+</span></span><span style="display:flex;"><span>                            class_ids<span style="color:#719e07">.</span>append(class_id)
+</span></span><span style="display:flex;"><span>                <span style="color:#b58900">print</span>(<span style="color:#b58900">len</span>(boxes))
+</span></span><span style="display:flex;"><span>                indexes <span style="color:#719e07">=</span> cv2<span style="color:#719e07">.</span>dnn<span style="color:#719e07">.</span>NMSBoxes(boxes, confidences, <span style="color:#2aa198">0.5</span>, <span style="color:#2aa198">0.4</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#719e07">if</span> <span style="color:#b58900">len</span>(indexes) <span style="color:#719e07">&gt;</span> <span style="color:#2aa198">0</span>:
+</span></span><span style="display:flex;"><span>                    <span style="color:#b58900">print</span>(indexes<span style="color:#719e07">.</span>flatten())
+</span></span><span style="display:flex;"><span>                    <span style="color:#719e07">for</span> i <span style="color:#719e07">in</span> indexes<span style="color:#719e07">.</span>flatten():
+</span></span><span style="display:flex;"><span>                        label <span style="color:#719e07">=</span> <span style="color:#b58900">str</span>(classes[class_ids[i]])
+</span></span><span style="display:flex;"><span>                    object_list<span style="color:#719e07">.</span>append(label)
+</span></span><span style="display:flex;"><span>            <span style="color:#719e07">else</span>:
+</span></span><span style="display:flex;"><span>                cap<span style="color:#719e07">.</span>release()
+</span></span><span style="display:flex;"><span>                cv2<span style="color:#719e07">.</span>destroyAllWindows()
+</span></span><span style="display:flex;"><span>                <span style="color:#719e07">break</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>        cap<span style="color:#719e07">.</span>release()
+</span></span><span style="display:flex;"><span>        cv2<span style="color:#719e07">.</span>destroyAllWindows()
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        object_set <span style="color:#719e07">=</span> <span style="color:#b58900">list</span>(<span style="color:#b58900">set</span>(object_list))
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#b58900">print</span>(<span style="color:#2aa198">&#39;Done detecting object in this video.&#39;</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#b58900">print</span>(<span style="color:#2aa198">f</span><span style="color:#2aa198">&#39;These are the objects detected: </span><span style="color:#2aa198">{</span>object_set<span style="color:#2aa198">}</span><span style="color:#2aa198">&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>        <span style="color:#719e07">return</span> object_set
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">except</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#b58900">print</span>(<span style="color:#2aa198">f</span><span style="color:#2aa198">&#39;</span><span style="color:#2aa198">{</span>filename<span style="color:#2aa198">}</span><span style="color:#2aa198"> did not work.&#39;</span>)
+</span></span></code></pre></div></details>
+<br>
+
+<h3 id="natural-language-processing" class="anchor-link"><a href="#natural-language-processing">Natural Language Processing</a></h3>
+<p>To process the text features, I utilize the Natural Language Toolkit (<code>nltk</code>) library for standardization to make the letters lowercase, to remove punctuation marks and stopwords, for tokenization and lemmatization. Likewise, I utilize <a href="https://pypi.org/project/wordsegment/"><code>WordSegment</code></a> to segment the strings of words without spaces between them.</p>
+<details><summary>Code</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#586e75"># Convert speech transcribed to lowercase and remove full stop</span>
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;standardized_audio_text&#39;</span>] <span style="color:#719e07">=</span> data[<span style="color:#2aa198">&#39;audio_text&#39;</span>]<span style="color:#719e07">.</span>apply(<span style="color:#719e07">lambda</span> x: x<span style="color:#719e07">.</span>lower()<span style="color:#719e07">.</span>replace(<span style="color:#2aa198">&#39;.&#39;</span>, <span style="color:#2aa198">&#39;&#39;</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">process_visual_text</span>(text):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;Processes string of text by removing punctuation marks and segment words.&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    text <span style="color:#719e07">=</span> text<span style="color:#719e07">.</span>lower()
+</span></span><span style="display:flex;"><span>    text <span style="color:#719e07">=</span> re<span style="color:#719e07">.</span>sub(<span style="color:#2aa198">r</span><span style="color:#2aa198">&#39;([^A-Za-z0-9|\s|[:punct:]]*)&#39;</span>, <span style="color:#2aa198">&#39;&#39;</span>, text)
+</span></span><span style="display:flex;"><span>    text <span style="color:#719e07">=</span> text<span style="color:#719e07">.</span>replace(<span style="color:#2aa198">&#39;|&#39;</span>, <span style="color:#2aa198">&#39;&#39;</span>)<span style="color:#719e07">.</span>replace(<span style="color:#2aa198">&#39;:&#39;</span>, <span style="color:#2aa198">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>    text <span style="color:#719e07">=</span> wordsegment<span style="color:#719e07">.</span>segment(text) 
+</span></span><span style="display:flex;"><span>    text <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39; &#39;</span><span style="color:#719e07">.</span>join([i <span style="color:#719e07">for</span> i <span style="color:#719e07">in</span> text <span style="color:#719e07">if</span> i <span style="color:#719e07">in</span> words])
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> text
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Apply the function and add a column to the table for the processed visual text</span>
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;processed_visual_text&#39;</span>] <span style="color:#719e07">=</span> data[<span style="color:#2aa198">&#39;visual_text&#39;</span>]<span style="color:#719e07">.</span>apply(process_visual_text)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">segment_text</span>(text):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;Segments strings of words without spaces between them.&#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    text <span style="color:#719e07">=</span> wordsegment<span style="color:#719e07">.</span>segment(text)
+</span></span><span style="display:flex;"><span>    text <span style="color:#719e07">=</span> <span style="color:#2aa198">&#39; &#39;</span><span style="color:#719e07">.</span>join([i <span style="color:#719e07">for</span> i <span style="color:#719e07">in</span> text])
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> text
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Convert list to string and add a column to the table for the processed objects</span>
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;object_text&#39;</span>] <span style="color:#719e07">=</span> data[<span style="color:#2aa198">&#39;object_list&#39;</span>]<span style="color:#719e07">.</span>apply(<span style="color:#719e07">lambda</span> x: <span style="color:#2aa198">&#39; &#39;</span><span style="color:#719e07">.</span>join([word <span style="color:#719e07">for</span> word <span style="color:#719e07">in</span> x]))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>data[<span style="color:#2aa198">&#39;object_text&#39;</span>] <span style="color:#719e07">=</span> data[<span style="color:#2aa198">&#39;object_text&#39;</span>]<span style="color:#719e07">.</span>apply(segment_text)
+</span></span></code></pre></div></details>
+<p>For instance:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Extracted Text</th>
+<th style="text-align:center">Processed Text</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">XeThis NY restaurant will “make you  feel &lt;like you’re inItaly! {</td>
+<td style="text-align:center">This NY restaurant will make you feel like   you&rsquo;re in Italy</td>
+</tr>
+<tr>
+<td style="text-align:center">\:@ Unique and diverse Italian |menu!   %Private &amp; romantic dininga</td>
+<td style="text-align:center">Unique and diverse Italian menu  Private &amp; romantic dining</td>
+</tr>
+<tr>
+<td style="text-align:center">Open 7 days a week withbrunch options  on {Saturdays &amp; Sundays!— “  Make your reservationasap! =ro mm tT</td>
+<td style="text-align:center">Open 7 days a week with brunch options on  Saturdays &amp; Sundays  Make your reservations asap</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="search-results" class="anchor-link"><a href="#search-results">Search Results</a></h3>
+<p>To create the search engine, the Okapi BM25 algorithm is implemented from the package <code>rank-bm25</code>:</p>
+<blockquote>
+<p>&ldquo;In information retrieval, Okapi BM25 (BM is an abbreviation of best matching) is a ranking function used by search engines to estimate the relevance of documents to a given search query&rdquo; (<a href="https://en.wikipedia.org/wiki/Okapi_BM25">Wikipedia</a>)</p>
+</blockquote>
+<details><summary>Code:</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>nlp <span style="color:#719e07">=</span> spacy<span style="color:#719e07">.</span>load(<span style="color:#2aa198">&#39;en_core_web_sm&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>tokenized_text <span style="color:#719e07">=</span> [] 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Tokenize processed text using spaCy</span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">for</span> doc <span style="color:#719e07">in</span> tqdm(nlp<span style="color:#719e07">.</span>pipe(data[<span style="color:#2aa198">&#39;preprocessed_text&#39;</span>]<span style="color:#719e07">.</span>fillna(<span style="color:#2aa198">&#39;&#39;</span>)<span style="color:#719e07">.</span>str<span style="color:#719e07">.</span>lower()<span style="color:#719e07">.</span>values, disable<span style="color:#719e07">=</span>[<span style="color:#2aa198">&#39;tagger&#39;</span>, <span style="color:#2aa198">&#39;parser&#39;</span>, <span style="color:#2aa198">&#39;ner&#39;</span>])):
+</span></span><span style="display:flex;"><span>    tokenized <span style="color:#719e07">=</span> [token<span style="color:#719e07">.</span>text <span style="color:#719e07">for</span> token <span style="color:#719e07">in</span> doc <span style="color:#719e07">if</span> token<span style="color:#719e07">.</span>is_alpha]
+</span></span><span style="display:flex;"><span>    tokenized_corpus<span style="color:#719e07">.</span>append(tokenized)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Instantiate class and read corpus</span>
+</span></span><span style="display:flex;"><span>bm25 <span style="color:#719e07">=</span> BM25Okapi(tokenized_corpus)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">search_video</span>(query, result<span style="color:#719e07">=</span><span style="color:#2aa198">3</span>, n<span style="color:#719e07">=</span><span style="color:#2aa198">1</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Returns matching video to the search query.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Parameters:
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    query (str): word or phrases to search.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    result (int): the number of results to search.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    n (int): the nth result to display.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Returns:
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    video to display from the list of results.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    tokenized_query <span style="color:#719e07">=</span> query<span style="color:#719e07">.</span>lower()<span style="color:#719e07">.</span>split(<span style="color:#2aa198">&#39; &#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    results <span style="color:#719e07">=</span> bm25<span style="color:#719e07">.</span>get_top_n(tokenized_query, data[<span style="color:#2aa198">&#39;file_path&#39;</span>], result)
+</span></span><span style="display:flex;"><span>    results_list <span style="color:#719e07">=</span> [video <span style="color:#719e07">for</span> video <span style="color:#719e07">in</span> results]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    video <span style="color:#719e07">=</span> Video(results_list[n<span style="color:#719e07">-</span><span style="color:#2aa198">1</span>], width<span style="color:#719e07">=</span><span style="color:#2aa198">300</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">print</span>(results_list[n<span style="color:#719e07">-</span><span style="color:#2aa198">1</span>])
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> video
+</span></span></code></pre></div></details>
+<br>
+<h4> Search Queries </h4>
+<br>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>search_video(<span style="color:#2aa198">&#39;italian restaurant ny umbrella&#39;</span>)
+</span></span></code></pre></div><br>
+<video width=20% controls>
+    <source src='vid0.MP4' type='video/webm'>
+</video>
+<br>
+<br>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>search_video(<span style="color:#2aa198">&#39;chinatown dumplings&#39;</span>)
+</span></span></code></pre></div><br>
+<video width=20% controls>
+    <source src='vid1.MP4' type='video/webm'>
+</video>
+<p>Finally, I build the web app! <strong><a href="https://share.streamlit.io/czarinagluna/ml-powered-video-library/main">Machine Learning-Powered Video Library</a></strong></p>
+<hr>
+<p>Source Code: <strong><a href="https://github.com/czarinagluna/ml-powered-video-library">Github Repository</a></strong></p>
+
+<h1 id="contact" class="anchor-link"><a href="#contact">Contact</a></h1>
+<p>Feel free to contact me for any questions and connect with me on <a href="https://www.linkedin.com/in/czarinagluna/">Linkedin</a>.</p>
+</div>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        <span class="footer-text">
+            <img src="signature.png" width="200px"><br>
+            Copyright 2022. Powered by <a href="https://themes.gohugo.io/themes/hugo-theme-introduction/"><strong>Introduction</strong></a> theme for <a href="http://gohugo.io/">Hugo</a>.
+        </span>
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="//czarinaluna.com/js/bundle.5c23c0437f001a469ca373a465a6f7487203d18e10cdff76d86a60af66d5ee28.js" integrity="sha256-XCPAQ38AGkaco3OkZab3SHID0Y4Qzf922Gpgr2bV7ig="></script>
+
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>

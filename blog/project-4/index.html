@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<title>
+Retail Product Recommender Engine - Czarina Luna
+</title>
+
+
+
+        
+        <meta property="og:title" content="Retail Product Recommender Engine - Czarina Luna" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content=""/>
+<meta property="og:url" content="//czarinaluna.com/blog/project-4/"/>
+<meta property="og:site_name" content="Czarina Luna"/>
+
+
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-4/canva.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-4/fig1.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-4/fig3.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-4/fig4.png"/>
+
+<meta property="og:image" content="//czarinaluna.com/blog/project-4/fig6.png"/>
+
+
+
+        
+<link rel="shortcut icon" href="/img/favicon.png">
+
+
+        
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.min.267a336653a0bbe8778db2ec1104a18aef649cadc8f11b3c527b17612201117b.css" integrity="sha256-JnozZlOgu&#43;h3jbLsEQShiu9knK3I8Rs8UnsXYSIBEXs=" crossorigin="anonymous" media="screen">
+
+
+
+
+
+        
+        
+        
+        
+    </head>
+    <body>
+        <section id="top" class="section">
+            
+            <div class="container hero  fade-in one ">
+                
+
+<h1 class="bold-title is-1">Project</h1>
+
+
+            </div>
+            
+            <div class="section  fade-in two ">
+                
+<div class="container">
+    <hr>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        
+        <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false" >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        <div class="navbar-menu " id="navMenu">
+            
+            
+            
+            
+            <a class="navbar-item" href="/">main</a>
+            
+
+            
+            
+
+            
+                
+            
+
+            
+                
+            
+
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#about">Intro</a>
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="//czarinaluna.com/projects/">
+                  
+                  
+                  Portfolio
+                  
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+            
+                
+                
+                
+                
+                  <a class="navbar-item" href="//czarinaluna.com/blog/">
+                  
+                  Back to Project
+                  
+                  </a>
+                
+                
+            
+            
+            
+            
+            
+            <a class="navbar-item" href="/#interest">Interest</a>
+            
+            
+            
+            
+
+            
+            
+            <a class="navbar-item" href="/#contact">Contact</a>
+            
+            
+
+            
+
+            
+            
+        </div>
+    </nav>
+    <hr>
+</div>
+
+
+
+                
+<div class="container">
+    <h2 class="title is-1 top-pad strong-post-title">
+        <a href="//czarinaluna.com/blog/project-4/">Retail Product Recommender Engine</a>
+    </h2>
+    
+    <h4 class="title is-4">
+        
+        By&nbsp;Czarina Luna</h4>
+    
+    <div class="post-data">
+        03 2022
+        
+         | 
+        8 minutes read
+        
+    </div>
+    
+    <div class="blog-share">
+        Share this:
+        
+        <a class="twitter-share-button"
+            href="https://twitter.com/intent/tweet?text=Retail%20Product%20Recommender%20Engine%20%2f%2fczarinaluna.com%2fblog%2fproject-4%2f"
+            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+            <i class="fab fa-twitter"></i>
+            <span class="hidden">Twitter</span>
+        </a>
+        
+        
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+</div>
+
+<div class="container markdown top-pad">
+    <p><img src="header.png" alt="header"></p>
+
+<h3 id="i-overview" class="anchor-link"><a href="#i-overview">I. Overview</a></h3>
+<p>A recommender engine is developed using 200,000 reviews at Rent the Runway to expose users to relevant products that tailor to their preferences. Content-based recommenders and collaborative filtering systems are implemented, including K-Nearest Neighbors and Matrix Factorization algorithms. The recommendations are generated according to predicted user ratings. Upon evaluation of the models, the Singular Value Decomposition resulted to the lowest mean absolute error of 0.5 on the five point rating scale.</p>
+
+<h3 id="ii-business-problem" class="anchor-link"><a href="#ii-business-problem">II. Business Problem</a></h3>
+<p>The clothing rental industry grows as more companies follow suit of the retailer Rent the Runway, which pioneered online services and subscriptions for designer rentals. To help grow the revenue of clothing rental companies, I develop recommendation systems that recommend retail products for users to rent. Doing so will expose users to relevant products that tailor to their preferences. Using Rent the Runway data, I conduct an analysis of the product reviews, model data to predict ratings, and provide recommendations accordingly.</p>
+
+<h3 id="iii-data-understanding" class="anchor-link"><a href="#iii-data-understanding">III. Data Understanding</a></h3>
+<p>The Rent the Runway reviews (<a href="https://cseweb.ucsd.edu/~jmcauley/datasets.html#clothing_fit">data source</a>) contain 200,000 ratings of 6,000 unique items rented between 2010 and 2018 by over 100,000 unique users. To clean the data, I take the following pre-processing steps:</p>
+<ul>
+<li>Drop missing values of the target variable <code>rating</code>.</li>
+<li>Impute missing values of the other variables.
+<ul>
+<li>Median for numerical features</li>
+<li>Mode for categorical features</li>
+</ul>
+</li>
+<li>Perform feature engineering.</li>
+<li>Create two additional dataframes.
+<ul>
+<li>Group the data by <code>user_id</code></li>
+<li>Group the data by <code>item_id</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Data Visualization</strong></p>
+<p>Let&rsquo;s explore and visualize the processed data.</p>
+<p><img src="fig1.png" alt="">
+Normally distributed and diverse ranges of weight, height, and age above.</p>
+<hr>
+<p><img src="fig3.png" alt="">
+Overall, two thirds of users rented only one item and the remaining third rented more than one, on the left chart. Majority of those who rented more than once rented exactly two items, on the right chart.</p>
+<hr>
+<p><img src="fig4.png" alt="">
+A left-skewed distribution for the average rating per user with most of them giving the highest rating, on the left chart. And a right-skewed distribution for the average length of text review per user, on the right chart.</p>
+<hr>
+<p><img src="fig6.png" alt="">
+The most common clothing categories are dresses and gowns that align with the most common reasons for renting which are for wedding, formal affair, and party.</p>
+<hr>
+<p><strong>Time Series Analysis</strong>
+<img src="timeseries.png" alt=""></p>
+<ul>
+<li>The count of reviews increased over the years from 10,000 in 2013 to almost 70,000 by 2018.</li>
+<li>The count of reviews peak during months of spring and fall with the highest spike of over 8,000 reviews in October of 2017.</li>
+<li>The average ratings steadily increased from over 4.45 in 2013 to 4.575 in 2016 but went down by less then 0.025 in 2017.</li>
+<li>The average ratings peak during the latter months of the year and aligned with the higher counts of rentals in the fall.</li>
+</ul>
+
+<h3 id="iv-recommendation-systems" class="anchor-link"><a href="#iv-recommendation-systems">IV. Recommendation Systems</a></h3>
+<p>First, I create a set of generalized recommendations based on all items, I calculate their weighted ratings, and return the top 10 highest-rated items across the board. To simulate the online shopping experience, I can also filter the data features like <code>wedding</code> for event. Next, I  <strong>personalize the recommendations</strong> by applying different algorithms for Content-Based Recommenders and Collaborative Filtering Systems.</p>
+
+<h4 id="popularity-recommendations" class="anchor-link"><a href="#popularity-recommendations">Popularity Recommendations</a></h4>
+<p><strong>Bayesian Average</strong>
+​
+<img src="https://render.githubusercontent.com/render/math?math=\large \large W = \left(\frac{v}{v %2B m} \right)R %2B \left(\frac{m}{v %2B m} \right)C"></p>
+<p style="font-family: Times New Roman; color: black">where:</p>
+<p style="font-family: Times New Roman; color: black; padding-left: 50px">
+<em>W</em> = Weighted rating<br>
+<em>v</em> = Number of ratings for the item<br>
+<em>m</em> = Minimum number of ratings required to be listed on top chart<br>
+<em>R</em> = Average rating of the item<br>
+<em>C</em> = Mean rating across the entire data<br>
+</p>
+<details><summary>Code:</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>m <span style="color:#719e07">=</span> item_data[<span style="color:#2aa198">&#39;user_count&#39;</span>]<span style="color:#719e07">.</span>quantile(<span style="color:#2aa198">0.9</span>)
+</span></span><span style="display:flex;"><span>C <span style="color:#719e07">=</span> item_data[<span style="color:#2aa198">&#39;rating_average&#39;</span>]<span style="color:#719e07">.</span>mean()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">weighted_rating</span>(x, m<span style="color:#719e07">=</span>m, C<span style="color:#719e07">=</span>C):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Calculates weighted rating based on Bayesian Average.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    v <span style="color:#719e07">=</span> x[<span style="color:#2aa198">&#39;user_count&#39;</span>]
+</span></span><span style="display:flex;"><span>    R <span style="color:#719e07">=</span> x[<span style="color:#2aa198">&#39;rating_average&#39;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> (v<span style="color:#719e07">/</span>(v<span style="color:#719e07">+</span>m) <span style="color:#719e07">*</span> R) <span style="color:#719e07">+</span> (m<span style="color:#719e07">/</span>(m<span style="color:#719e07">+</span>v) <span style="color:#719e07">*</span> C)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">popular_recommendation</span>(df<span style="color:#719e07">=</span>data, n<span style="color:#719e07">=</span><span style="color:#2aa198">10</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Returns the most popular items according to the highest weighted ratings.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    item_df <span style="color:#719e07">=</span> create_item_data(df)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    top_item_ratings <span style="color:#719e07">=</span> item_df<span style="color:#719e07">.</span>loc[(item_df[<span style="color:#2aa198">&#39;user_count&#39;</span>]<span style="color:#719e07">&gt;=</span>m)]
+</span></span><span style="display:flex;"><span>    top_item_ratings[<span style="color:#2aa198">&#39;score&#39;</span>] <span style="color:#719e07">=</span> top_item_ratings<span style="color:#719e07">.</span>apply(weighted_rating, axis<span style="color:#719e07">=</span><span style="color:#2aa198">1</span>)
+</span></span><span style="display:flex;"><span>    top_item_ratings <span style="color:#719e07">=</span> top_item_ratings<span style="color:#719e07">.</span>sort_values(<span style="color:#2aa198">&#39;score&#39;</span>, ascending<span style="color:#719e07">=</span><span style="color:#cb4b16">False</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> top_item_ratings<span style="color:#719e07">.</span>head(n)
+</span></span></code></pre></div></details>
+<br>
+
+<h4 id="content-based-recommenders" class="anchor-link"><a href="#content-based-recommenders">Content-Based Recommenders</a></h4>
+<p>Content-based recommenders are based on the idea that if a user likes an item, the user will also like items similar to it. To measure the similarity between the items, I calculate the Pearson correlation using their numerical and categorical features. Then, I construct a <code>similarity_matrix</code> of all items to generate the content-based recommendations for any <code>item_id</code>.</p>
+<details><summary>Code:</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">item_similarity</span>(item_df):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Measures pearson correlation of items from the table of item data and returns a similarity matrix.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    item_df <span style="color:#719e07">=</span> item_df<span style="color:#719e07">.</span>drop([<span style="color:#2aa198">&#39;fit_small&#39;</span>, <span style="color:#2aa198">&#39;fit_large&#39;</span>, <span style="color:#2aa198">&#39;weight_mean&#39;</span>, <span style="color:#2aa198">&#39;rented_for_all&#39;</span>, <span style="color:#2aa198">&#39;height_mean&#39;</span>, <span style="color:#2aa198">&#39;size_mean&#39;</span>, 
+</span></span><span style="display:flex;"><span>                            <span style="color:#2aa198">&#39;age_mean&#39;</span>, <span style="color:#2aa198">&#39;review_month_top&#39;</span>], axis<span style="color:#719e07">=</span><span style="color:#2aa198">1</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    similarity_features <span style="color:#719e07">=</span> item_df[[<span style="color:#2aa198">&#39;item_id&#39;</span>, <span style="color:#2aa198">&#39;fit&#39;</span>, <span style="color:#2aa198">&#39;user_count&#39;</span>, <span style="color:#2aa198">&#39;weight_median&#39;</span>, <span style="color:#2aa198">&#39;rating_average&#39;</span>, <span style="color:#2aa198">&#39;rented_for_top&#39;</span>, 
+</span></span><span style="display:flex;"><span>                                 <span style="color:#2aa198">&#39;body_type_top&#39;</span>, <span style="color:#2aa198">&#39;category_top&#39;</span>, <span style="color:#2aa198">&#39;height_median&#39;</span>, <span style="color:#2aa198">&#39;size_median&#39;</span>, <span style="color:#2aa198">&#39;age_median&#39;</span>, 
+</span></span><span style="display:flex;"><span>                                 <span style="color:#2aa198">&#39;review_length_average&#39;</span>, <span style="color:#2aa198">&#39;review_season_top&#39;</span>]]
+</span></span><span style="display:flex;"><span>    similarity_features <span style="color:#719e07">=</span> similarity_features<span style="color:#719e07">.</span>set_index(<span style="color:#2aa198">&#39;item_id&#39;</span>)
+</span></span><span style="display:flex;"><span>    similarity_features <span style="color:#719e07">=</span> pd<span style="color:#719e07">.</span>get_dummies(similarity_features, columns<span style="color:#719e07">=</span>[<span style="color:#2aa198">&#39;rented_for_top&#39;</span>, <span style="color:#2aa198">&#39;body_type_top&#39;</span>, <span style="color:#2aa198">&#39;category_top&#39;</span>, <span style="color:#2aa198">&#39;review_season_top&#39;</span>])
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    similarity_matrix <span style="color:#719e07">=</span> similarity_features<span style="color:#719e07">.</span>T
+</span></span><span style="display:flex;"><span>    similarity_matrix <span style="color:#719e07">=</span> similarity_matrix<span style="color:#719e07">.</span>corr(method<span style="color:#719e07">=</span><span style="color:#2aa198">&#39;pearson&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> similarity_features, similarity_matrix
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">content_based_similarity</span>(similarity_matrix, item_id, n<span style="color:#719e07">=</span><span style="color:#2aa198">20</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Returns the most similar item recommendations to the given item based on the similarity matrix.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    recommendations <span style="color:#719e07">=</span> similarity_matrix[item_id]<span style="color:#719e07">.</span>sort_values(ascending<span style="color:#719e07">=</span><span style="color:#cb4b16">False</span>)
+</span></span><span style="display:flex;"><span>    recommendations <span style="color:#719e07">=</span> recommendations<span style="color:#719e07">.</span>drop([item_id], axis<span style="color:#719e07">=</span><span style="color:#2aa198">0</span>)<span style="color:#719e07">.</span>index
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    recommendations_list <span style="color:#719e07">=</span> []
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">for</span> i <span style="color:#719e07">in</span> <span style="color:#b58900">range</span>(n):
+</span></span><span style="display:flex;"><span>        recommendations_list<span style="color:#719e07">.</span>append(recommendations[i])
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    display(item_data<span style="color:#719e07">.</span>loc[item_data[<span style="color:#2aa198">&#39;item_id&#39;</span>]<span style="color:#719e07">==</span>item_id])
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">print</span>(<span style="color:#2aa198">f</span><span style="color:#2aa198">&#39;----------------------------------------</span><span style="color:#cb4b16">\n</span><span style="color:#2aa198">Top </span><span style="color:#2aa198">{</span>n<span style="color:#2aa198">}</span><span style="color:#2aa198"> Recommendations for Item #</span><span style="color:#2aa198">{</span>item_id<span style="color:#2aa198">}</span><span style="color:#2aa198">:&#39;</span>)
+</span></span><span style="display:flex;"><span>                          
+</span></span><span style="display:flex;"><span>    recommendations_df <span style="color:#719e07">=</span> item_data<span style="color:#719e07">.</span>loc[item_data[<span style="color:#2aa198">&#39;item_id&#39;</span>]<span style="color:#719e07">.</span>isin(recommendations_list)]
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> recommendations_df
+</span></span></code></pre></div></details>
+<br>
+<p>To take it a step further, I use the text features as well to create a <strong>Text Review-Based Recommender</strong> using Natural Language Processing, to:</p>
+<ul>
+<li>Clean the text by removing stopwords and performing lemmatization.</li>
+<li>Create the Term Frequency-Inverse Document Frequency (TF-IDF) vectors for the <em>documents</em>, which are the reviews.</li>
+<li>Compute the pairwise cosine similarity from the matrix of TF-IDF scores, given by the dot product between each TF-IDF vector.</li>
+</ul>
+<details><summary>Code:</summary>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>count <span style="color:#719e07">=</span> CountVectorizer()
+</span></span><span style="display:flex;"><span>tfidf <span style="color:#719e07">=</span> TfidfVectorizer(ngram_range<span style="color:#719e07">=</span>(<span style="color:#2aa198">1</span>,<span style="color:#2aa198">3</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">def</span> <span style="color:#268bd2">text_based_recommendation</span>(text_item_df, item_id, n<span style="color:#719e07">=</span><span style="color:#2aa198">10</span>, text_review<span style="color:#719e07">=</span><span style="color:#cb4b16">True</span>, category<span style="color:#719e07">=</span><span style="color:#cb4b16">False</span>):
+</span></span><span style="display:flex;"><span>    <span style="color:#2aa198">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    Returns the most similar item recommendations to the given item based on text reviews.
+</span></span></span><span style="display:flex;"><span><span style="color:#2aa198">    &#39;&#39;&#39;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">if</span> text_review:
+</span></span><span style="display:flex;"><span>        tfidf_matrix <span style="color:#719e07">=</span> tfidf<span style="color:#719e07">.</span>fit_transform(text_item_df[<span style="color:#2aa198">&#39;review&#39;</span>])
+</span></span><span style="display:flex;"><span>        cosine_similarity_ <span style="color:#719e07">=</span> linear_kernel(tfidf_matrix, tfidf_matrix)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">if</span> text_review <span style="color:#719e07">==</span> <span style="color:#cb4b16">False</span> <span style="color:#719e07">and</span> category <span style="color:#719e07">==</span> <span style="color:#cb4b16">True</span>:
+</span></span><span style="display:flex;"><span>        count_matrix <span style="color:#719e07">=</span> count<span style="color:#719e07">.</span>fit_transform(text_item_df[<span style="color:#2aa198">&#39;rented_for&#39;</span>])
+</span></span><span style="display:flex;"><span>        cosine_similarity_ <span style="color:#719e07">=</span> cosine_similarity(count_matrix, count_matrix)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    indices <span style="color:#719e07">=</span> pd<span style="color:#719e07">.</span>Series(text_item_df<span style="color:#719e07">.</span>index, index<span style="color:#719e07">=</span>text_item_df[<span style="color:#2aa198">&#39;item_id&#39;</span>])<span style="color:#719e07">.</span>drop_duplicates()
+</span></span><span style="display:flex;"><span>    idx <span style="color:#719e07">=</span> indices[item_id]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    similarity_scores <span style="color:#719e07">=</span> <span style="color:#b58900">list</span>(<span style="color:#b58900">enumerate</span>(cosine_similarity_[idx]))
+</span></span><span style="display:flex;"><span>    similarity_scores <span style="color:#719e07">=</span> <span style="color:#b58900">sorted</span>(similarity_scores, key<span style="color:#719e07">=</span><span style="color:#719e07">lambda</span> x: x[<span style="color:#2aa198">1</span>], reverse<span style="color:#719e07">=</span><span style="color:#cb4b16">True</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    top_similarity_scores <span style="color:#719e07">=</span> similarity_scores[<span style="color:#2aa198">1</span>:n<span style="color:#719e07">+</span><span style="color:#2aa198">1</span>]
+</span></span><span style="display:flex;"><span>    item_indices <span style="color:#719e07">=</span> [i[<span style="color:#2aa198">0</span>] <span style="color:#719e07">for</span> i <span style="color:#719e07">in</span> top_similarity_scores]
+</span></span><span style="display:flex;"><span>    top_text_based_recommendations <span style="color:#719e07">=</span> text_item_df[<span style="color:#2aa198">&#39;item_id&#39;</span>]<span style="color:#719e07">.</span>iloc[item_indices]
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    display(item_data<span style="color:#719e07">.</span>loc[item_data[<span style="color:#2aa198">&#39;item_id&#39;</span>]<span style="color:#719e07">==</span>item_id])
+</span></span><span style="display:flex;"><span>    <span style="color:#b58900">print</span>(<span style="color:#2aa198">f</span><span style="color:#2aa198">&#39;----------------------------------------</span><span style="color:#cb4b16">\n</span><span style="color:#2aa198">Top </span><span style="color:#2aa198">{</span>n<span style="color:#2aa198">}</span><span style="color:#2aa198"> Recommendations for Item #</span><span style="color:#2aa198">{</span>item_id<span style="color:#2aa198">}</span><span style="color:#2aa198">:&#39;</span>)
+</span></span><span style="display:flex;"><span>                          
+</span></span><span style="display:flex;"><span>    recommendations_df <span style="color:#719e07">=</span> item_data<span style="color:#719e07">.</span>loc[item_data[<span style="color:#2aa198">&#39;item_id&#39;</span>]<span style="color:#719e07">.</span>isin(top_text_based_recommendations)]
+</span></span><span style="display:flex;"><span>    <span style="color:#719e07">return</span> recommendations_df
+</span></span></code></pre></div></details>
+<br>
+<p><strong>Some differences</strong> between the text-based recommendations and the content-based recommendations to the same item:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Content-based</th>
+<th>Text-based</th>
+<th>Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rating_average</td>
+<td>4.38 - 4.69</td>
+<td>4.43 - 4.77</td>
+<td>4.40</td>
+</tr>
+<tr>
+<td>rented_for_top</td>
+<td>party, formal affair, wedding</td>
+<td>formal affair (across the board)</td>
+<td>formal affair</td>
+</tr>
+<tr>
+<td>body_type_top</td>
+<td>hourglass, athlete</td>
+<td>hourglass (across the board)</td>
+<td>hourglass</td>
+</tr>
+<tr>
+<td>category_top</td>
+<td>dress, gown, sheath</td>
+<td>gown (across the board)</td>
+<td>gown</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="collaborative-filtering-systems" class="anchor-link"><a href="#collaborative-filtering-systems">Collaborative Filtering Systems</a></h4>
+<p>Collaborative filtering systems recommend items to a user based on the user&rsquo;s past ratings <em>and</em> on the past ratings and preferences of other similar users. I apply the different implementations of collaborative filtering recommendation systems using the Python library <a href="https://surprise.readthedocs.io/en/stable/index.html"><code>surprise</code></a>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Prediction Algorithm</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="https://surprise.readthedocs.io/en/stable/basic_algorithms.html#surprise.prediction_algorithms.random_pred.NormalPredictor">Normal Predictor</a></td>
+<td style="text-align:left">Algorithm predicting a random rating based on the distribution of the training set, which is assumed to be normal.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://surprise.readthedocs.io/en/stable/basic_algorithms.html#surprise.prediction_algorithms.baseline_only.BaselineOnly">Baseline Only</a></td>
+<td style="text-align:left">Algorithm predicting the baseline estimate for given user and item.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://surprise.readthedocs.io/en/stable/knn_inspired.html#surprise.prediction_algorithms.knns.KNNBasic">KNN Basic</a></td>
+<td style="text-align:left">A basic collaborative filtering algorithm.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://surprise.readthedocs.io/en/stable/knn_inspired.html#surprise.prediction_algorithms.knns.KNNBaseline">KNN Baseline</a></td>
+<td style="text-align:left">A basic collaborative filtering algorithm, taking into account the mean ratings of each user.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://surprise.readthedocs.io/en/stable/knn_inspired.html#surprise.prediction_algorithms.knns.KNNWithMeans">KNN with Means</a></td>
+<td style="text-align:left">A basic collaborative filtering algorithm, taking into account the z-score normalization of each user.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://surprise.readthedocs.io/en/stable/knn_inspired.html#surprise.prediction_algorithms.knns.KNNWithZScore">KNN with Z-Score</a></td>
+<td style="text-align:left">A basic collaborative filtering algorithm taking into account a <em>baseline</em> rating.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://surprise.readthedocs.io/en/stable/matrix_factorization.html#surprise.prediction_algorithms.matrix_factorization.SVD">Single Value Decomposition</a></td>
+<td style="text-align:left">The famous SVD algorithm, as popularized by Simon Funk during the Netflix Prize. When baselines are not used, this is equivalent to Probabilistic Matrix Factorization.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://surprise.readthedocs.io/en/stable/matrix_factorization.html#surprise.prediction_algorithms.matrix_factorization.SVDpp">Single Value Decomposition ++</a></td>
+<td style="text-align:left">The SVD++ algorithm, an extension of SVD taking into account implicit ratings.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://surprise.readthedocs.io/en/stable/matrix_factorization.html#surprise.prediction_algorithms.matrix_factorization.NMF">Non-Negative Matrix Factorization</a></td>
+<td style="text-align:left">A collaborative filtering algorithm based on Non-negative Matrix Factorization.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://surprise.readthedocs.io/en/stable/slope_one.html#surprise.prediction_algorithms.slope_one.SlopeOne">SlopeOne</a></td>
+<td style="text-align:left">A simple yet accurate collaborative filtering algorithm.</td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://surprise.readthedocs.io/en/stable/co_clustering.html#surprise.prediction_algorithms.co_clustering.CoClustering">CoClustering</a></td>
+<td style="text-align:left">A collaborative filtering algorithm based on co-clustering.</td>
+</tr>
+</tbody>
+</table>
+
+<h4 id="data-modeling" class="anchor-link"><a href="#data-modeling">Data Modeling</a></h4>
+<br>
+<div class="highlight"><pre tabindex="0" style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-Python" data-lang="Python"><span style="display:flex;"><span>recommendation_systems <span style="color:#719e07">=</span> [NormalPredictor(), 
+</span></span><span style="display:flex;"><span>                          BaselineOnly(), 
+</span></span><span style="display:flex;"><span>                          KNNBasic(sim_options<span style="color:#719e07">=</span>{<span style="color:#2aa198">&#39;name&#39;</span>:<span style="color:#2aa198">&#39;cosine&#39;</span>, <span style="color:#2aa198">&#39;user_based&#39;</span>:<span style="color:#cb4b16">False</span>}), 
+</span></span><span style="display:flex;"><span>                          KNNBaseline(sim_options<span style="color:#719e07">=</span>{<span style="color:#2aa198">&#39;name&#39;</span>:<span style="color:#2aa198">&#39;cosine&#39;</span>, <span style="color:#2aa198">&#39;user_based&#39;</span>:<span style="color:#cb4b16">False</span>}), 
+</span></span><span style="display:flex;"><span>                          KNNWithMeans(sim_options<span style="color:#719e07">=</span>{<span style="color:#2aa198">&#39;name&#39;</span>:<span style="color:#2aa198">&#39;cosine&#39;</span>, <span style="color:#2aa198">&#39;user_based&#39;</span>:<span style="color:#cb4b16">False</span>}), 
+</span></span><span style="display:flex;"><span>                          KNNWithZScore(sim_options<span style="color:#719e07">=</span>{<span style="color:#2aa198">&#39;name&#39;</span>:<span style="color:#2aa198">&#39;cosine&#39;</span>, <span style="color:#2aa198">&#39;user_based&#39;</span>:<span style="color:#cb4b16">False</span>}), 
+</span></span><span style="display:flex;"><span>                          SVD(), 
+</span></span><span style="display:flex;"><span>                          SVDpp(), 
+</span></span><span style="display:flex;"><span>                          NMF(), 
+</span></span><span style="display:flex;"><span>                          SlopeOne(), 
+</span></span><span style="display:flex;"><span>                          CoClustering()]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#586e75"># Evaluate recommendation systems using Mean Absolute Error</span>
+</span></span><span style="display:flex;"><span>evaluation <span style="color:#719e07">=</span> []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#719e07">for</span> system <span style="color:#719e07">in</span> recommendation_systems:
+</span></span><span style="display:flex;"><span>    score <span style="color:#719e07">=</span> cross_validate(system, read_data, measures<span style="color:#719e07">=</span>[<span style="color:#2aa198">&#39;MAE&#39;</span>], cv<span style="color:#719e07">=</span><span style="color:#2aa198">3</span>, verbose<span style="color:#719e07">=</span><span style="color:#cb4b16">False</span>)
+</span></span><span style="display:flex;"><span>    evaluation<span style="color:#719e07">.</span>append((<span style="color:#b58900">str</span>(system)<span style="color:#719e07">.</span>split(<span style="color:#2aa198">&#39; &#39;</span>)[<span style="color:#2aa198">0</span>]<span style="color:#719e07">.</span>split(<span style="color:#2aa198">&#39;.&#39;</span>)[<span style="color:#719e07">-</span><span style="color:#2aa198">1</span>], score[<span style="color:#2aa198">&#39;test_mae&#39;</span>]<span style="color:#719e07">.</span>mean()))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>evaluation <span style="color:#719e07">=</span> pd<span style="color:#719e07">.</span>DataFrame(evaluation, columns<span style="color:#719e07">=</span>[<span style="color:#2aa198">&#39;system&#39;</span>, <span style="color:#2aa198">&#39;mae&#39;</span>])
+</span></span></code></pre></div><p><strong>Hyperparameter Tuning</strong></p>
+<pre tabindex="0"><code># Change the KNNs similarity measure from cosine to pearson
+sim_pearson = {&#39;name&#39;:&#39;pearson&#39;, &#39;user_based&#39;:False}
+
+pearson_evaluation = []
+pearson_knns = [knns.KNNBasic(sim_options=sim_pearson), 
+                knns.KNNBaseline(sim_options=sim_pearson), 
+                knns.KNNWithMeans(sim_options=sim_pearson), 
+                knns.KNNWithZScore(sim_options=sim_pearson)]
+
+for system in pearson_knns:
+    pearson_score = cross_validate(system, read_data, measures=[&#39;MAE&#39;], cv=3, verbose=False)
+    pearson_evaluation.append((str(system).split(&#39; &#39;)[0].split(&#39;.&#39;)[-1], pearson_score[&#39;test_mae&#39;].mean()))
+</code></pre><p>To optimize the Singular Value Decomposition models, I perform <code>GridSearchCV</code>.</p>
+<pre tabindex="0"><code>def grid_search(system, params):
+    &#39;&#39;&#39;
+    Implements grid search and returns best cross validation scores and parameters.
+    &#39;&#39;&#39;
+    model = GridSearchCV(system, param_grid=params, n_jobs=-1)
+    model.fit(read_data)
+    
+    print(model.best_score)
+    print(model.best_params)
+
+params_svd1 = {&#39;n_factors&#39;: [10, 50, 100], &#39;n_epochs&#39;: [10, 20, 100], &#39;lr_all&#39;: [0.001, 0.005, 0.01], &#39;reg_all&#39;: [0.02, 0.05, 0.1]}
+grid_search(SVD, params_svd1)
+
+params_svdpp1 = {&#39;n_factors&#39;: [10, 50, 100], &#39;n_epochs&#39;: [10, 20, 100], &#39;lr_all&#39;: [0.001, 0.005, 0.01], &#39;reg_all&#39;: [0.02, 0.05, 0.1]}
+grid_search(SVDpp, params_svdpp1)
+</code></pre><br>
+
+<h3 id="v-results" class="anchor-link"><a href="#v-results">V. Results</a></h3>
+<p><strong>Model Performance</strong></p>
+<p>To evaluate the recommendation systems, I use the mean absolute error which measures the difference between the rating predicted by the model and the actual rating by the user.</p>
+<p><img src="canva.png" alt=""></p>
+<p>The results show that the tuned Singular Value Decomposition attains the lowest Mean Absolute Error of 0.5 on the 5 point rating scale.</p>
+<p><strong>Recommender Engine</strong></p>
+<pre tabindex="0"><code>def svd_recommendation(user_id, n=10):
+    &#39;&#39;&#39;
+    Returns top item recommendations generated by the Single Value Decomposition model.
+    &#39;&#39;&#39;
+    unique_ids = df[&#39;itemID&#39;].unique()
+    item_user_id = df.loc[df[&#39;userID&#39;]==user_id, &#39;itemID&#39;]
+    items_to_predict = np.setdiff1d(unique_ids, item_user_id)
+    
+    engine = SVD(n_factors=10, n_epochs=20, lr_all=0.01, reg_all=0.02)
+    engine.fit(read_data.build_full_trainset())
+
+    svd_recommendations = []
+    for i in items_to_predict:
+        svd_recommendations.append((i, engine.predict(uid=user_id, iid=i).est))
+
+    display(user_data.loc[user_data[&#39;user_id&#39;]==user_id])
+    print(f&#39;----------------------------------------\nTop {n} Recommendations for User #{user_id}:&#39;)
+    
+    svd_recommendations = pd.DataFrame(svd_recommendations, columns=[&#39;item_id&#39;, &#39;predicted_rating&#39;])
+    svd_recommendations = svd_recommendations.sort_values(&#39;predicted_rating&#39;, ascending=False).head(n)
+    svd_recommendations = svd_recommendations.merge(item_data, on=&#39;item_id&#39;)
+    
+    return svd_recommendations
+</code></pre><hr>
+<p>Source Code: <strong><a href="https://github.com/czarinagluna/retail-product-recommender-engine">Github Repository</a></strong></p>
+
+<h1 id="contact" class="anchor-link"><a href="#contact">Contact</a></h1>
+<p>Feel free to contact me for any questions and connect with me on <a href="https://www.linkedin.com/in/czarinagluna/">Linkedin</a>.</p>
+
+</div>
+
+
+
+
+
+                
+                <div class="container">
+    <hr>
+</div>
+<div class="container has-text-centered top-pad">
+    <a href="#top">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+</div>
+
+<div class="container">
+    <hr>
+</div>
+
+                <div class="section" id="footer">
+    <div class="container has-text-centered">
+    
+        <span class="footer-text">
+            <img src="signature.png" width="200px"><br>
+            Copyright 2022. Powered by <a href="https://themes.gohugo.io/themes/hugo-theme-introduction/"><strong>Introduction</strong></a> theme for <a href="http://gohugo.io/">Hugo</a>.
+        </span>
+    
+    </div>
+</div>
+
+                
+            </div>
+        </section>
+        
+        
+
+
+<script src="//czarinaluna.com/js/bundle.5c23c0437f001a469ca373a465a6f7487203d18e10cdff76d86a60af66d5ee28.js" integrity="sha256-XCPAQ38AGkaco3OkZab3SHID0Y4Qzf922Gpgr2bV7ig="></script>
+
+
+
+
+
+
+        
+        
+        
+        
+    </body>
+</html>
