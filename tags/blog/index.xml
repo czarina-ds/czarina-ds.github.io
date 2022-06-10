@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Czarina Luna</title>
+    <link>//czarinaluna.com/tags/blog/</link>
+    <description>Recent content in blog on Czarina Luna</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="//czarinaluna.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Long Form Writing and Quotes</title>
+      <link>//czarinaluna.com/blog/xlong-form-post/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>//czarinaluna.com/blog/xlong-form-post/</guid>
+      <description>Prolific writes rejoice! Introduction beautifully renders long pages of writing and blocks of quoted text. Let the ipsum show you how.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus eget nunc scelerisque viverra. Quam vulputate dignissim suspendisse in est ante in nibh mauris. Pharetra magna ac placerat vestibulum lectus mauris. Eget lorem dolor sed viverra ipsum.
+Elementum Nisi Quis eleifend quam adipiscing.</description>
+    </item>
+    
+  </channel>
+</rss>
